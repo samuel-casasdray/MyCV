@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Samuel CASAS DRAY - CV</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="menu">
+        <img src="ressources/profil.jpg">
+        <nav>
+            <ul id="nav-mc1" onclick="changerpage('mc1')" data-dico="nav-1" class="dicojs active"></ul>
+            <ul id="nav-mc2" onclick="changerpage('mc2')" data-dico="nav-2" class="dicojs"></ul>
+            <ul id="nav-mc3" onclick="changerpage('mc3')" data-dico="nav-3" class="dicojs"></ul>
+            <ul id="nav-mc4" onclick="changerpage('mc4')" data-dico="nav-4" class="dicojs"></ul>
+            <ul id="nav-mc5" onclick="changerpage('mc5')" data-dico="nav-5" class="dicojs"></ul>
+        </nav>
+    </div>
+    <div class="maincontent">
+        <div class="background"></div>
+        <div id="mc1" class="visible">
+            <div class="container">
+                <div class="titre dicojs" data-dico="nav-1"></div>
+                <div class="name">Samuel CASAS DRAY</div>
+                <div class="poste dicojs" data-dico="about-titre"></div>
+                <table>
+                    <tr>
+                        <td class="table_titre dicojs" data-dico="about-table-1"></td>
+                        <td class="table_value">19</td>
+                    </tr>
+                    <tr>
+                        <td class="table_titre dicojs" data-dico="about-table-2"></td>
+                        <td class="table_value"><a href="mailto:samuelcasasdray@gmail.com">samuelcasasdray@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <td class="table_titre dicojs" data-dico="about-table-3"></td>
+                        <td class="table_value">7 avenue Saint-Lazare, 34000 Montpellier</td>
+                    </tr>
+                    <tr>
+                        <td class="table_titre dicojs" data-dico="about-table-4"></td>
+                        <td class="table_value">+33 7 60 42 87 27</td>
+                    </tr>
+                </table>
+                <div class="social-icon">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div id="mc2" class="cache">
+            <div class="titre dicojs" data-dico="nav-2"></div>
+        </div>
+        <div id="mc3" class="cache">
+            <div class="titre dicojs" data-dico="nav-3"></div>
+        </div>
+        <div id="mc4" class="cache">
+            <div class="titre dicojs" data-dico="nav-4"></div>
+        </div>
+        <div id="mc5" class="cache">
+            <div class="titre dicojs" data-dico="nav-5"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

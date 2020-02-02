@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto|Roboto+Condensed:300|Raleway&display=swap');
+
+.visible {
+    opacity: 1;
+}
+
+.cache {
+    opacity: 0
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    margin: 0;
+    background-color: #F39C12;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* MENU */
+
+.menu {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+    height: 80%;
+}
+
+.menu img {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 100%;
+    margin: auto;
+}
+
+.menu nav {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul {
+    text-align: center;
+    padding: 3px 10px;
+    font-size: 24px;
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    margin: 20px auto;
+}
+
+nav ul:before {
+    content: '';
+    border: #424949 solid 2px;
+    border-right: none;
+    border-left: none;
+    position: absolute;
+    opacity: 0;
+    top: 5px;
+    right: 0;
+    left: 0;
+    bottom: 4px;
+    transition: top 0.5s, right 0.5s, left 0.5s, bottom 0.5s, opacity 0.2s;
+}
+
+nav ul:hover:before {
+    top: -12px;
+    right: -12px;
+    left: -12px;
+    bottom: -12px;
+    opacity: 1;
+}
+
+nav ul.active {
+    color: #fff;
+}
+
+/* MAINCONTENT */
+
+.maincontent .background {
+    background-color: #D0D3D4;
+}
+
+.maincontent > div {
+    transition: opacity 0.5s;
+    height: 100vh;
+    width: calc(100vw - 20%);
+    position: absolute;
+    font-family: Raleway, Roboto, sans-serif;
+    display: flex;
+}
+
+.maincontent .titre {
+    font-size: 42px;
+    padding-bottom: 30px;
+}
+
+/* -- Page 1 -- */
+
+#mc1 .container {
+    margin: auto auto auto 20%;
+    height: auto;
+    width: 40%;
+}
+
+#mc1 .name {
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+#mc1 .poste {
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+
+#mc1 table {
+    border-spacing: 0 10px;
+}
+
+#mc1 td:first-child {
+    padding-right: 10px;
+}
+
+#mc1 td {
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+#mc1 tr:not(:last-child) {
+    padding-bottom: 10px;
+}
+
+#mc1 .social-icon {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* ICON */
+
+.fa {
+    transition: opacity 0.2s;
+    padding: 10px 0;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 100%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-instagram {
+    background: #db00f4;
+    color: white;
+}
+
+.fa-github {
+    background: black;
+    color: white;
+}
