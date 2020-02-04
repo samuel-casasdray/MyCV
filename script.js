@@ -34,4 +34,17 @@ function applydico(json) {
     })
 }
 
+function firstload() {
+    $('.star').each((i, element) => {
+        console.log(element);
+        for (let j = 0; j < 5; j++) {
+            let td = document.createElement("td");
+            td.classList.add("star-icon");
+            if(element.dataset.star > j)
+                td.classList.add("check");
+            element.appendChild(td);
+        }
+    })
+}
+
 loaddico("fr");

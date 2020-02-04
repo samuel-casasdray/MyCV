@@ -17,7 +17,7 @@ body {
 }
 
 a {
-    color: black;
+    color: #0A0908;
     text-decoration: none;
 }
 
@@ -27,8 +27,8 @@ a {
     width: 20%;
     display: flex;
     flex-direction: column;
-    margin: auto 0;
-    height: 80%;
+    margin: 0;
+    height: 100%;
 }
 
 .menu img {
@@ -39,7 +39,7 @@ a {
 }
 
 .menu nav {
-    height: 60%;
+    height: 70%;
     display: flex;
     flex-direction: column;
 }
@@ -82,7 +82,7 @@ nav ul.active {
 /* MAINCONTENT */
 
 .maincontent .background {
-    background-color: #D0D3D4;
+    background-color: #EAE0D5;
 }
 
 .maincontent > div {
@@ -99,13 +99,13 @@ nav ul.active {
     padding-bottom: 30px;
 }
 
-/* -- Page 1 -- */
-
-#mc1 .container {
+.container {
     margin: auto auto auto 20%;
     height: auto;
     width: 40%;
 }
+
+/* -- Page 1 -- */
 
 #mc1 .name {
     font-size: 24px;
@@ -127,7 +127,7 @@ nav ul.active {
 
 #mc1 td {
     padding-bottom: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #0A0908;
 }
 
 #mc1 tr:not(:last-child) {
@@ -140,6 +140,33 @@ nav ul.active {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+/* Page 2 */
+
+#mc2 table {
+    border-spacing: 0;
+}
+
+#mc2 .star td {
+    border-bottom: 1px solid #0A0908;
+    padding: 1px 2px;
+}
+
+#mc2 .star td:first-child {
+    padding-right: 20px;
+}
+
+#mc2 .star td:not(:first-child) {
+    color: #0A0908;
+}
+
+#mc2 .star .star-icon::before {
+    content: '\2605';
+}
+
+#mc2 .star .star-icon.check {
+    color: #D5A021;
 }
 
 /* ICON */

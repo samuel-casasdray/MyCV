@@ -16,6 +16,7 @@
             <ul id="nav-mc3" onclick="changerpage('mc3')" data-dico="nav-3" class="dicojs"></ul>
             <ul id="nav-mc4" onclick="changerpage('mc4')" data-dico="nav-4" class="dicojs"></ul>
             <ul id="nav-mc5" onclick="changerpage('mc5')" data-dico="nav-5" class="dicojs"></ul>
+            <ul id="nav-mc6" onclick="changerpage('mc6')" data-dico="nav-6" class="dicojs"></ul>
         </nav>
     </div>
     <div class="maincontent">
@@ -52,7 +53,44 @@
             </div>
         </div>
         <div id="mc2" class="cache">
-            <div class="titre dicojs" data-dico="nav-2"></div>
+            <div class="container">
+                <div class="titre dicojs" data-dico="nav-2"></div>
+                <table>
+                    <tr class="star" data-star="4">
+                        <td>Javascript</td>
+                    </tr>
+                    <tr class="star" data-star="3">
+                        <td>Typescript</td>
+                    </tr>
+                    <tr class="star" data-star="5">
+                        <td>HTML</td>
+                    </tr>
+                    <tr class="star" data-star="4">
+                        <td>CSS</td>
+                    </tr>
+                    <tr class="star" data-star="4">
+                        <td>PHP</td>
+                    </tr>
+                    <tr class="star" data-star="4">
+                        <td>SQL/PLSQL</td>
+                    </tr>
+                    <tr class="star" data-star="3">
+                        <td>C++</td>
+                    </tr>
+                    <tr class="star" data-star="2">
+                        <td>C</td>
+                    </tr>
+                    <tr class="star" data-star="5">
+                        <td>Java</td>
+                    </tr>
+                    <tr class="star" data-star="4">
+                        <td>Python</td>
+                    </tr>
+                    <tr class="star" data-star="3">
+                        <td>Framework (Ionic, Cordova)</td>
+                    </tr>
+                </table>
+            </div>
         </div>
         <div id="mc3" class="cache">
             <div class="titre dicojs" data-dico="nav-3"></div>
@@ -65,5 +103,9 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        changerpage("mc2");
+        firstload();
+    </script>
 </body>
 </html>
