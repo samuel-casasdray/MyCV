@@ -11,11 +11,13 @@
   "tab-titre-1": "Projet du lycée",
   "tab-text-1-1": "Durant l'année de terminal au lycée, j'ai appris le Python (dont la lib Tkinter).\nJ'ai pu durant cette année faire une multitude d'applications et jeu dont un Pac-Man, Tetris, Sudoka, Space invader, RPG, Calculatrice, IA (très faible), Bataille navale,...",
   "tab-titre-2": "Les RPG",
-  "tab-text-2-1": "",
-  "tab-titre-3": "Le dominion",
+  "tab-text-2-1": "Le RPG a toujours été un jeu que j'ai apprécié a coder car il me demandait beaucoup de connaissance et cela me permettait de reprendre l'ensemble de mes connaissances.\n J'en ai fait une dizaine (en python, C++ et java), ci-dessous un exemple de RPG avec un système de monde (plusieurs cartes que l'on peut acceder via des portes), detection des bordure, récolte, inventaire (interactif), classe de personnage, argent, nourriture et vie.",
+  "tab-titre-3": "tuLoues.fr",
   "tab-text-3-1": "",
   "tab-titre-4": "L'awalé",
-  "tab-text-4-1": "",
+  "tab-text-4-1": "Au cours du semestre 3 du DUT, en équipe nous devions coder un projet dans le langage que nous voulions. Notre projet était l'Awalé et nous l'avons codé en HTML, CSS, JS.\nIl était en multijoueur (plusieurs ordinateurs connectés en local) et respectait les règles du jeu classique",
   "tab-titre-5": "Site d'e-commerce",
-  "tab-text-5-1": ""
+  "tab-text-5-1": "Au cours du semestre 3 du DUT, en équipe nous devions coder un site d'e-Commerce en HTML, CSS, PHP avec le modele MVC. Notre theme était un magasin de sport (iDecat).\nIl y avait un panier auquel on pouvait ajouter des produits puis on pouvait payer (pas vraiment car il n'y a pas de vrai produit), une page de connexion et d'inscription pour pouvoir voir son historique d'achat, une base de donnée au model CRUD, un panneau d'administration permettant de créer, modifier, supprimer des produits, clients et commandes.\nLes mots de passe étaient hachés et un mail était envoyé pour confirmer l'inscription.",
+  "tab-titre-6": "IHM",
+  "tab-text-6-1": "En IHM, nous devions faire un CV en ligne en utilisant Materialize.\nCe fut la v1.0 de ce site."
 }

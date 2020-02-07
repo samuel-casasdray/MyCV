@@ -102,9 +102,9 @@ nav ul.active {
 }
 
 .container {
-    margin: auto auto auto 20%;
+    margin: auto;
     height: auto;
-    width: 40%;
+    width: 50%;
 }
 
 /* -- Page 1 -- */
@@ -127,7 +127,7 @@ nav ul.active {
     padding-right: 10px;
 }
 
-#mc1 td {
+#mc1 tr:not(:last-child) td {
     padding-bottom: 10px;
     border-bottom: 1px solid #0A0908;
 }
@@ -136,12 +136,12 @@ nav ul.active {
     padding-bottom: 10px;
 }
 
-#mc1 .social-icon {
-    width: 60%;
+#mc1 .social-icon td {
+    text-align: center;
+}
+
+#mc1 .social-icon div {
     margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
 
 /* Page 2 */
@@ -206,20 +206,43 @@ nav ul.active {
 }
 
 #mc3 .tab-item .text {
+    font-size: 16px;
     height: min-content;
     padding: 10px 0;
+}
+
+#mc3 .tab-item .text div {
+    padding: 3px 0;
+    text-align: justify;
 }
 
 #mc3 .tab-item .image {
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 0 20px;
 }
 
 #mc3 .tab-item .image * {
     width: 45%;
     margin: auto;
+}
+
+#mc3 .tab-item .image.i-1 * {
+    width: 80%;
+}
+
+
+#mc3 .tab-item .image.i-2spe * {
+    width: 35%;
+}
+
+#mc3 .tab-item .image.i-3 * {
+    width: 30%;
+}
+
+#mc3 .tab-item .image.i-4 * {
+    width: 20%;
 }
 
 

@@ -40,7 +40,10 @@ function loaddico(lang) {
 function applydico(json) {
     return new Promise(callback => {
         $('.dicojs').each((i, element) => {
-            element.innerText = json[element.dataset.dico];
+            let text = json[element.dataset.dico];
+            if(element.dataset.dico.startsWith("tab-text"))
+                text = "<div>" + text.replace(/\n/g, "</div><div>") + "</div>";
+            element.innerHTML = text;
         });
         callback("fini");
     });
