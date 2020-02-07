@@ -1,13 +1,21 @@
 {
   "nav-1": "A propos de moi",
   "nav-2": "Compétences",
-  "nav-3": "Intérêts",
+  "nav-3": "Mes projets",
   "nav-4": "Historique",
-  "nav-5": "Me contacter",
-  "nav-6": "Mes projets",
   "about-titre": "Etudiant a l'iut de Montpellier en informatique",
   "about-table-1": "Age",
   "about-table-2": "Adresse mail",
   "about-table-3": "Adresse postale",
-  "about-table-4": "Numéro de téléphone"
+  "about-table-4": "Numéro de téléphone",
+  "tab-titre-1": "Projet du lycée",
+  "tab-text-1-1": "Durant l'année de terminal au lycée, j'ai appris le Python (dont la lib Tkinter).\nJ'ai pu durant cette année faire une multitude d'applications et jeu dont un Pac-Man, Tetris, Sudoka, Space invader, RPG, Calculatrice, IA (très faible), Bataille navale,...",
+  "tab-titre-2": "Les RPG",
+  "tab-text-2-1": "",
+  "tab-titre-3": "Le dominion",
+  "tab-text-3-1": "",
+  "tab-titre-4": "L'awalé",
+  "tab-text-4-1": "",
+  "tab-titre-5": "Site d'e-commerce",
+  "tab-text-5-1": ""
 }

@@ -9,19 +9,12 @@
 </head>
 <body>
     <div class="menu">
-        <img src="ressources/profil.jpg">
-        <nav>
-            <ul id="nav-mc1" onclick="changerpage('mc1')" data-dico="nav-1" class="dicojs active"></ul>
-            <ul id="nav-mc2" onclick="changerpage('mc2')" data-dico="nav-2" class="dicojs"></ul>
-            <ul id="nav-mc3" onclick="changerpage('mc3')" data-dico="nav-3" class="dicojs"></ul>
-            <ul id="nav-mc4" onclick="changerpage('mc4')" data-dico="nav-4" class="dicojs"></ul>
-            <ul id="nav-mc5" onclick="changerpage('mc5')" data-dico="nav-5" class="dicojs"></ul>
-            <ul id="nav-mc6" onclick="changerpage('mc6')" data-dico="nav-6" class="dicojs"></ul>
-        </nav>
+        <img src="ressources/profil.jpg" alt="profil">
+        <nav id="navbar"></nav>
     </div>
     <div class="maincontent">
         <div class="background"></div>
-        <div id="mc1" class="visible">
+        <div id="mc1" class="visible" >
             <div class="container">
                 <div class="titre dicojs" data-dico="nav-1"></div>
                 <div class="name">Samuel CASAS DRAY</div>
@@ -93,18 +86,62 @@
             </div>
         </div>
         <div id="mc3" class="cache">
-            <div class="titre dicojs" data-dico="nav-3"></div>
+            <div class="container">
+                <div class="titre dicojs" data-dico="nav-3"></div>
+                <div class="tab">
+                    <div class="tab-item">
+                        <div class="tab-titre dicojs" data-dico="tab-titre-1"></div>
+                        <div class="text-cont">
+                            <div class="text dicojs" data-dico="tab-text-1-1"></div>
+                            <div class="image">
+                                <img src="ressources/pacman.PNG" alt="pac-man">
+                                <img src="ressources/tetris.PNG" alt="tetris">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-item">
+                        <div class="tab-titre dicojs" data-dico="tab-titre-2"></div>
+                        <div class="text-cont">
+                            <div class="text dicojs" data-dico="tab-text-2-1"></div>
+                            <div class="image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-item">
+                        <div class="tab-titre dicojs" data-dico="tab-titre-3"></div>
+                        <div class="text-cont">
+                            <div class="text dicojs" data-dico="tab-text-3-1"></div>
+                            <div class="image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-item">
+                        <div class="tab-titre dicojs" data-dico="tab-titre-4"></div>
+                        <div class="text-cont">
+                            <div class="text dicojs" data-dico="tab-text-4-1"></div>
+                            <div class="image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-item">
+                        <div class="tab-titre dicojs" data-dico="tab-titre-5"></div>
+                        <div class="text-cont">
+                            <div class="text dicojs" data-dico="tab-text-5-1"></div>
+                            <div class="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="mc4" class="cache">
-            <div class="titre dicojs" data-dico="nav-4"></div>
-        </div>
-        <div id="mc5" class="cache">
-            <div class="titre dicojs" data-dico="nav-5"></div>
+            <div class="container">
+                <div class="titre dicojs" data-dico="nav-4"></div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
     <script>
-        changerpage("mc2");
         firstload();
     </script>
 </body>

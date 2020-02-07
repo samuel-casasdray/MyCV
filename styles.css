@@ -2,10 +2,12 @@
 
 .visible {
     opacity: 1;
+    visibility: visible;
 }
 
 .cache {
-    opacity: 0
+    opacity: 0;
+    visibility: hidden;
 }
 
 body {
@@ -22,13 +24,12 @@ a {
 }
 
 /* MENU */
-
 .menu {
     width: 20%;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    height: 100%;
+    margin: auto 0;
+    height: min-content;
 }
 
 .menu img {
@@ -36,6 +37,7 @@ a {
     height: 20vh;
     border-radius: 100%;
     margin: auto;
+    padding: 20px 0;
 }
 
 .menu nav {
@@ -86,7 +88,7 @@ nav ul.active {
 }
 
 .maincontent > div {
-    transition: opacity 0.5s;
+    transition: opacity 0.2s, visibility 0.2s;
     height: 100vh;
     width: calc(100vw - 20%);
     position: absolute;
@@ -168,6 +170,58 @@ nav ul.active {
 #mc2 .star .star-icon.check {
     color: #D5A021;
 }
+
+/* Page 3 */
+
+#mc3 .tab {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 0 5px 0 #0A0908;
+}
+
+#mc3 .tab-item {
+    background-color: #F0F7F4;
+    font-size: 18px;
+}
+
+#mc3 .tab-item .tab-titre {
+    padding: 5px;
+}
+
+#mc3 .tab-item .tab-titre:hover {
+    background-color: #ddd;
+}
+
+#mc3 .tab-item:not(:last-child) {
+    border-bottom: #cccccc solid 1px;
+}
+
+#mc3 .tab-item .text-cont {
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    background: #D4B483;
+    overflow: hidden;
+    padding: 0 18px;
+}
+
+#mc3 .tab-item .text {
+    height: min-content;
+    padding: 10px 0;
+}
+
+#mc3 .tab-item .image {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px 0;
+}
+
+#mc3 .tab-item .image * {
+    width: 45%;
+    margin: auto;
+}
+
 
 /* ICON */
 
