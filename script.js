@@ -28,6 +28,16 @@ function changerpage(id) {
     navchange(document.getElementsByClassName("active")[0], document.getElementById("nav-"+id))
 }
 
+function changerdate(ancien, nouveau) {
+    console.log(Object.keys(json_global["annee"]).reverse(), nouveau, ancien);
+    let i_a = Object.keys(json_global["annee"]).reverse().indexOf(ancien.innerText);
+    let i_n = Object.keys(json_global["annee"]).reverse().indexOf(nouveau.innerText);
+    ancien.classList.remove('select');
+    nouveau.classList.add('select');
+    document.getElementById(ancien.innerText).classList.add('hide');
+    document.getElementById(nouveau.innerText).classList.remove('hide');
+}
+
 function loaddico(lang) {
     return new Promise(callback => {
         $.getJSON("dico/"+lang+".json", (json) => {
@@ -59,7 +69,7 @@ async function firstload() {
             element.appendChild(td);
         }
     });
-    const json_global = await loaddico("fr");
+    json_global = await loaddico("fr");
     $('#navbar').each((i,element) => {
         let nb = countkeys(json_global, "nav");
         console.log(nb);
@@ -79,7 +89,6 @@ async function firstload() {
     $(".tab-item").each((i,element) => {
         list.push(element);
     });
-    console.log(list);
     $(".tab-item").each((i,element) => {
         element.onclick = () => {
             let content = element.children[1];
@@ -94,7 +103,38 @@ async function firstload() {
                 content.style.maxHeight = content.scrollHeight + "px";
             } };
     });
-    changerpage("mc3");
+    $('.text-cont-4').each((i,element) => {
+        let nb = Object.keys(json_global["annee"]).reverse();
+        let children = element.children;
+        for (let a of nb) {
+            let annee = document.createElement("div");
+            let annee_text = document.createElement("div");
+            for (let k of Object.keys(json_global["annee"][a])) {
+                let cont = document.createElement("div");
+                let titre = document.createElement("div");
+                let text = document.createElement("div");
+                cont.classList.add("annee-item-item");
+                titre.classList.add("annee-item-titre");
+                text.classList.add("annee-item-text");
+                text.innerHTML = json_global["annee"][a][k];
+                titre.innerHTML = k;
+                cont.appendChild(titre);
+                cont.appendChild(text);
+                annee_text.appendChild(cont);
+            }
+            annee.innerHTML = a;
+            annee_text.id = a;
+            annee_text.classList.add("annee-item");
+            annee_text.classList.add("hide");
+            annee.onclick = () => changerdate(document.getElementsByClassName('select')[0], annee);
+            children[0].appendChild(annee);
+            children[1].appendChild(annee_text);
+        }
+        console.log(element.children);
+        element.children[0].children[0].classList.add('select');
+        element.children[1].children[0].classList.remove('hide');
+    });
+    changerpage("mc4");
 }
 
 function countkeys(liste, vari) {
@@ -105,3 +145,5 @@ function countkeys(liste, vari) {
     }
     return i;
 }
+
+let json_global;

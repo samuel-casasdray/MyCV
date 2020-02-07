@@ -245,6 +245,87 @@ nav ul.active {
     width: 20%;
 }
 
+/* Page 4 */
+
+#mc4 .spe {
+    margin-top: 15%;
+}
+
+#mc4 .text-cont-4 {
+    display: flex;
+    flex-direction: row;
+}
+
+#mc4 .text-cont-4 .annee {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#mc4 .text-cont-4 .annee * {
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+
+#mc4 .text-cont-4 .annee .select {
+    color: #e3ae24;
+    font-size: 28px;
+}
+
+/*#mc4 .text-cont-4 .annee *:after {
+    content: '';
+    display : inline-block;
+    height : 0;
+    width : 0;
+    margin-left: 5px;
+    border-top : 6px solid transparent;
+    border-bottom : 6px solid transparent;
+    border-right : 12px solid transparent;
+}
+
+#mc4 .text-cont-4 .annee .select:after {
+    border-right : 12px solid #B3BFB8;
+}*/
+
+#mc4 .text-cont-4 .annee *:hover {
+    color: #b70000;
+    text-decoration: underline;
+}
+
+#mc4 .text-cont-4 .text-annee {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+}
+
+#mc4 .annee-item {
+    position: fixed;
+    width: 30%;
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 1s, opacity 0.5s;
+}
+
+#mc4 .annee-item.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#mc4 .annee-item .annee-item-item {
+    padding: 10px;
+}
+
+#mc4 .annee-item .annee-item-titre {
+    font-size: 24px;
+    padding-bottom: 5px;
+}
+
+#mc4 .annee-item .annee-item-text {
+    text-align: justify;
+}
 
 /* ICON */
 
