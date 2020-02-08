@@ -9,7 +9,7 @@
   "about-table-3": "Adresse postale",
   "about-table-4": "Numéro de téléphone",
   "tab-titre-1": "Projet du lycée",
-  "tab-text-1-1": "Durant l'année de terminal au lycée, j'ai appris le Python (dont la lib Tkinter).\nJ'ai pu durant cette année faire une multitude d'applications et jeu dont un Pac-Man, Tetris, Sudoka, Space invader, RPG, Calculatrice, IA (très faible), Bataille navale,...",
+  "tab-text-1-1": "Durant l'année de terminal au lycée, j'ai appris le Python (dont la lib Tkinter).\nJ'ai pu durant cette année faire une multitude d'applications et jeu dont un Pac-Man, Tetris, Sudoku, Space invader, RPG, Calculatrice, IA (très faible), Bataille navale,...",
   "tab-titre-2": "Les RPG",
   "tab-text-2-1": "Le RPG a toujours été un jeu que j'ai apprécié a coder car il me demandait beaucoup de connaissance et cela me permettait de reprendre l'ensemble de mes connaissances.\n J'en ai fait une dizaine (en python, C++ et java), ci-dessous un exemple de RPG avec un système de monde (plusieurs cartes que l'on peut acceder via des portes), detection des bordure, récolte, inventaire (interactif), classe de personnage, argent, nourriture et vie.",
   "tab-titre-3": "tuLoues.fr",

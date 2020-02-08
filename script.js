@@ -29,13 +29,13 @@ function changerpage(id) {
 }
 
 function changerdate(ancien, nouveau) {
-    console.log(Object.keys(json_global["annee"]).reverse(), nouveau, ancien);
-    let i_a = Object.keys(json_global["annee"]).reverse().indexOf(ancien.innerText);
-    let i_n = Object.keys(json_global["annee"]).reverse().indexOf(nouveau.innerText);
+    console.log(Object.keys(json_global["annee"]).reverse(), nouveau, ancien, child_tab, child_tab[nouveau.innerText]);
     ancien.classList.remove('select');
     nouveau.classList.add('select');
-    document.getElementById(ancien.innerText).classList.add('hide');
-    document.getElementById(nouveau.innerText).classList.remove('hide');
+    document.getElementById("text-annee").innerHTML = "";
+    document.getElementById("text-annee").appendChild(child_tab[nouveau.innerText]);
+    /*document.getElementById(ancien.innerText).classList.add('hide');
+    document.getElementById(nouveau.innerText).classList.remove('hide');*/
 }
 
 function loaddico(lang) {
@@ -55,6 +55,11 @@ function applydico(json) {
                 text = "<div>" + text.replace(/\n/g, "</div><div>") + "</div>";
             element.innerHTML = text;
         });
+        try {
+            document.getElementById("text-annee")
+        } catch (e) {
+            e.print();
+        }
         callback("fini");
     });
 }
@@ -72,7 +77,6 @@ async function firstload() {
     json_global = await loaddico("fr");
     $('#navbar').each((i,element) => {
         let nb = countkeys(json_global, "nav");
-        console.log(nb);
         for(let i = 1; i < nb+1; i++) {
             let ul = document.createElement("ul");
             ul.id = "nav-mc"+i;
@@ -90,7 +94,7 @@ async function firstload() {
         list.push(element);
     });
     $(".tab-item").each((i,element) => {
-        element.onclick = () => {
+        element.children[0].onclick = () => {
             let content = element.children[1];
             content.classList.toggle("active");
             for(let elementbis of list) {
@@ -123,18 +127,24 @@ async function firstload() {
                 annee_text.appendChild(cont);
             }
             annee.innerHTML = a;
-            annee_text.id = a;
+            annee_text.id = "annee-text-id";
             annee_text.classList.add("annee-item");
-            annee_text.classList.add("hide");
             annee.onclick = () => changerdate(document.getElementsByClassName('select')[0], annee);
             children[0].appendChild(annee);
             children[1].appendChild(annee_text);
+            child_tab[a] = annee_text;
         }
-        console.log(element.children);
+        let height = 0;
+        for(let j of Object.values(child_tab))
+            if(height < j.scrollHeight)
+                height = j.scrollHeight;
         element.children[0].children[0].classList.add('select');
-        element.children[1].children[0].classList.remove('hide');
+        children[1].innerHTML = "";
+        document.getElementById("text-annee").style.height = height + "px";
+        children[1].appendChild(child_tab[element.children[0].children[0].textContent]);
+        console.log(child_tab);
     });
-    changerpage("mc4");
+    //changerpage("mc4");
 }
 
 function countkeys(liste, vari) {
@@ -146,4 +156,5 @@ function countkeys(liste, vari) {
     return i;
 }
 
+let child_tab = {};
 let json_global;

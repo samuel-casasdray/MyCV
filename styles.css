@@ -259,7 +259,8 @@ nav ul.active {
 #mc4 .text-cont-4 .annee {
     display: flex;
     flex-direction: column;
-    width: 15%;
+    justify-content: center;
+    width: 20%;
     text-align: center;
     padding: 10px 0;
 }
@@ -267,6 +268,7 @@ nav ul.active {
 #mc4 .text-cont-4 .annee * {
     font-size: 22px;
     padding-bottom: 5px;
+    transition: color 0.3s;
 }
 
 #mc4 .text-cont-4 .annee .select {
@@ -297,21 +299,13 @@ nav ul.active {
 #mc4 .text-cont-4 .text-annee {
     display: flex;
     flex-direction: column;
-    width: 75%;
+    justify-content: center;
+    width: 70%;
     height: 100%;
 }
 
 #mc4 .annee-item {
-    position: fixed;
     width: 30%;
-    opacity: 1;
-    visibility: visible;
-    transition: visibility 1s, opacity 0.5s;
-}
-
-#mc4 .annee-item.hide {
-    opacity: 0;
-    visibility: hidden;
 }
 
 #mc4 .annee-item .annee-item-item {
