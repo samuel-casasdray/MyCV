@@ -52,10 +52,38 @@ a {
     box-shadow: -1px 0 5px 0 #0A0908;
 }
 
+.config-menu * {
+    font-family: Raleway, Roboto, sans-serif;
+}
+
 .config-menu.show {
     display: block;
 }
 
+.dark-mode {
+    width: max-content;
+    margin: 40% auto 20%;
+}
+
+.lang {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin: auto;
+}
+
+.lang .lang-text {
+    margin: auto auto 20px;
+}
+
+.flag-item {
+    width: 45px;
+    height: 30px;
+}
+
+.flag-item:not(:last-child) {
+    margin-right: 20px;
+}
 
 
 /* MENU */

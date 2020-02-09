@@ -74,18 +74,6 @@ function applydico(json) {
     });
 }
 
-function getlistfiles() {
-    return new Promise(callback => {
-        var directory="ressources/Flag/";
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open( "GET", directory, false ); // false for synchronous request
-        xmlHttp.send( null );
-        var ret=xmlHttp.responseText;
-        var fileList=ret.split('\n');
-        callback(fileList);
-    })
-}
-
 async function firstload() {
     $('.star').each((i, element) => {
         for (let j = 0; j < 5; j++) {
@@ -140,9 +128,15 @@ async function firstload() {
             await waitms(200);
             document.getElementById("config-menu").classList.remove("show");
         }
+    };
+    for(let flag of json_global["flag"]) {
+        let img = document.createElement("img")
+        img.src = "ressources/Flag/" + flag + ".gif";
+        img.classList.add("flag-item");
+        img.id = flag;
+        img.onclick = () => loaddico(flag);
+        document.getElementById("lang").appendChild(img);
     }
-    let files = getlistfiles();
-    console.log(files);
 }
 
 function countkeys(liste, vari) {

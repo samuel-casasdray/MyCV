@@ -33,5 +33,7 @@
       "Big title 1": "-text- 1"
     }
   },
-  "dark-mode": "Dark mode"
+  "dark-mode": "Dark mode",
+  "flag": ["fr", "en"],
+  "lang-text": "Language : "
 }

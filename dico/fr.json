@@ -33,5 +33,7 @@
       "Gros titre 1": "text 1"
     }
   },
-  "dark-mode": "Mode sombre"
+  "dark-mode": "Mode sombre",
+  "flag": ["fr", "en"],
+  "lang-text": "Langue : "
 }
