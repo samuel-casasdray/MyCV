@@ -1,5 +1,5 @@
 
-function waitms(ms) {
+async function waitms(ms) {
     return new Promise(callback => {
         setTimeout(() => {
             callback("fini");
@@ -7,12 +7,12 @@ function waitms(ms) {
     });
 }
 
-async function cacher(im) {
+function cacher(im) {
     im.classList.remove("visible");
     im.classList.add("cache");
 }
 
-async function afficher(im) {
+function afficher(im) {
     im.classList.add("visible");
     im.classList.remove("cache");
 }
@@ -34,13 +34,12 @@ function changerdate(ancien, nouveau) {
     nouveau.classList.add('select');
     document.getElementById("text-annee").innerHTML = "";
     document.getElementById("text-annee").appendChild(child_tab[nouveau.innerText]);
-    /*document.getElementById(ancien.innerText).classList.add('hide');
-    document.getElementById(nouveau.innerText).classList.remove('hide');*/
 }
 
 function loaddico(lang) {
     return new Promise(callback => {
         $.getJSON("dico/"+lang+".json", (json) => {
+            json_global = json;
             applydico(json);
             callback(json);
         });
@@ -56,12 +55,35 @@ function applydico(json) {
             element.innerHTML = text;
         });
         try {
-            document.getElementById("text-annee")
+            loadannee();
         } catch (e) {
-            e.print();
+            console.error(e);
         }
+        /*try {
+            for(let child1 of Object.entries(child_tab)) {
+                for(let child2 of Object.entries(child1[1].children)) {
+                    child2[1].children[0].textContent = Object.entries(json_global["annee"]["2018"])[child2[0]][0];
+                    child2[1].children[1].textContent = Object.entries(json_global["annee"]["2018"])[child2[0]][1];
+
+                }
+            }
+        } catch (e) {
+            console.error(e);
+        }*/
         callback("fini");
     });
+}
+
+function getlistfiles() {
+    return new Promise(callback => {
+        var directory="ressources/Flag/";
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", directory, false ); // false for synchronous request
+        xmlHttp.send( null );
+        var ret=xmlHttp.responseText;
+        var fileList=ret.split('\n');
+        callback(fileList);
+    })
 }
 
 async function firstload() {
@@ -107,9 +129,39 @@ async function firstload() {
                 content.style.maxHeight = content.scrollHeight + "px";
             } };
     });
+    document.getElementById("config-button").onclick = () => {
+        document.getElementById("config-menu").classList.add("show");
+        document.getElementById("config-menu").style.width = "20%";
+    };
+    document.onclick = async (e) => {
+        console.log(e.composedPath(), e.composedPath().includes(document.getElementById("config-button")));
+        if(!(e.composedPath().includes(document.getElementById("config-menu")) || e.composedPath().includes(document.getElementById("config-button")))) {
+            document.getElementById("config-menu").style.width = "0";
+            await waitms(200);
+            document.getElementById("config-menu").classList.remove("show");
+        }
+    }
+    let files = getlistfiles();
+    console.log(files);
+}
+
+function countkeys(liste, vari) {
+    let i = 0;
+    for(let key of Object.keys(liste)) {
+        if(key.toString().startsWith(vari))
+            i++;
+    }
+    return i;
+}
+
+function loadannee() {
     $('.text-cont-4').each((i,element) => {
         let nb = Object.keys(json_global["annee"]).reverse();
         let children = element.children;
+        let childselect = null;
+        if(children[0].innerHTML !== "")
+            childselect = children[0].getElementsByClassName("select")[0].textContent;
+        children[0].innerHTML = "";
         for (let a of nb) {
             let annee = document.createElement("div");
             let annee_text = document.createElement("div");
@@ -128,6 +180,7 @@ async function firstload() {
             }
             annee.innerHTML = a;
             annee_text.id = "annee-text-id";
+            annee_text.dataset.dico = a;
             annee_text.classList.add("annee-item");
             annee.onclick = () => changerdate(document.getElementsByClassName('select')[0], annee);
             children[0].appendChild(annee);
@@ -138,22 +191,20 @@ async function firstload() {
         for(let j of Object.values(child_tab))
             if(height < j.scrollHeight)
                 height = j.scrollHeight;
-        element.children[0].children[0].classList.add('select');
+        let child_i = 0;
+        if (childselect !== null) {
+            for(let i=0; i<element.children[0].children.length; i++) {
+                if (element.children[0].children[i].innerText === childselect) {
+                    child_i = i;
+                    break;
+                }
+            }
+        }
+        element.children[0].children[child_i].classList.add('select');
         children[1].innerHTML = "";
         document.getElementById("text-annee").style.height = height + "px";
         children[1].appendChild(child_tab[element.children[0].children[0].textContent]);
-        console.log(child_tab);
     });
-    //changerpage("mc4");
-}
-
-function countkeys(liste, vari) {
-    let i = 0;
-    for(let key of Object.keys(liste)) {
-        if(key.toString().startsWith(vari))
-            i++;
-    }
-    return i;
 }
 
 let child_tab = {};

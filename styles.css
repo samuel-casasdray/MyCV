@@ -23,7 +23,43 @@ a {
     text-decoration: none;
 }
 
+/* CONFIG */
+
+.config-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0A0908;
+    border-radius: 100%;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+}
+
+.config-button:hover {
+    background-color: #4d4a4a;
+}
+
+.config-menu {
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 0;
+    right: 0;
+    background-color: whitesmoke;
+    z-index: 1;
+    transition: width 0.3s;
+    box-shadow: -1px 0 5px 0 #0A0908;
+}
+
+.config-menu.show {
+    display: block;
+}
+
+
+
 /* MENU */
+
 .menu {
     width: 20%;
     display: flex;
@@ -332,6 +368,7 @@ nav ul.active {
     text-decoration: none;
     margin: 5px 2px;
     border-radius: 100%;
+    color: white;
 }
 
 .fa:hover {
@@ -340,20 +377,24 @@ nav ul.active {
 
 .fa-facebook {
     background: #3B5998;
-    color: white;
 }
 
 .fa-linkedin {
     background: #007bb5;
-    color: white;
 }
 
 .fa-instagram {
     background: #db00f4;
-    color: white;
 }
 
 .fa-github {
     background: black;
-    color: white;
+}
+
+.fa-cog {
+    margin: 0;
+}
+
+.fa-cog:hover {
+    opacity: 1;
 }
