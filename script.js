@@ -122,7 +122,6 @@ async function firstload() {
         document.getElementById("config-menu").style.width = "20%";
     };
     document.onclick = async (e) => {
-        console.log(e.composedPath(), e.composedPath().includes(document.getElementById("config-button")));
         if(!(e.composedPath().includes(document.getElementById("config-menu")) || e.composedPath().includes(document.getElementById("config-button")))) {
             document.getElementById("config-menu").style.width = "0";
             await waitms(200);
@@ -130,12 +129,49 @@ async function firstload() {
         }
     };
     for(let flag of json_global["flag"]) {
-        let img = document.createElement("img")
+        let img = document.createElement("img");
         img.src = "ressources/Flag/" + flag + ".gif";
         img.classList.add("flag-item");
         img.id = flag;
-        img.onclick = () => loaddico(flag);
+        img.onclick = async () => {
+            loaddico(flag);
+            document.getElementById("config-menu").style.width = "0";
+            await waitms(200);
+            document.getElementById("config-menu").classList.remove("show");
+        };
         document.getElementById("lang").appendChild(img);
+    }
+    document.getElementById("darkmode-button").onclick = () => {
+        let listid_color = [["maincontent", "background", "mc1", "mc2", "mc3", "mc4", "mail", "navbar"]];
+        let listid_bg = [["body"], ["background"]];
+        for(let i=0; i < listid_color.length; i++)
+            for(let j=0; j < listid_color[i].length; j++)
+                document.getElementById(listid_color[i][j]).classList.toggle("black-color-" + i);
+        for(let i=0; i < listid_bg.length; i++)
+            for(let j=0; j < listid_bg[i].length; j++)
+                document.getElementById(listid_bg[i][j]).classList.toggle("black-bg-"+i);
+        document.getElementById("navbar").classList.toggle("black-color-1");
+        document.getElementById("profil").classList.toggle("black-border");
+        $(".star-icon").each((i, element) => {
+            if (!element.classList.contains('check'))
+                element.classList.toggle("black-color-0");
+        });
+        $(".tab-item").each((i, element) => {
+            element.classList.toggle("black-bg-2");
+        });
+        $(".tab-titre").each((i, element) => {
+            element.classList.toggle("black-bg-3");
+        });
+        $(".text-cont").each((i, element) => {
+            element.classList.toggle("black-bg-4");
+        });
+        $(".annee").each((i, element) => {
+            element.classList.toggle("black-color-3");
+        });
+        document.getElementById("slider").classList.toggle("black-bg-5");
+        document.getElementById("config-menu").classList.toggle("black-bg-6");
+        document.getElementById("config-menu").classList.toggle("black-color-0");
+
     }
 }
 

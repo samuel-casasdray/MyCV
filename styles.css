@@ -16,6 +16,8 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #F39C12;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 a {
@@ -65,6 +67,63 @@ a {
     margin: 40% auto 20%;
 }
 
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-left: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch .darkmode-button {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: -13px;
+    bottom: -3px;
+    background-color: #0A0908;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.darkmode-button:checked + .slider {
+    background-color: #F39C12;
+}
+
+.darkmode-button:focus + .slider {
+    box-shadow: 0 0 1px #F39C12;
+}
+
+.darkmode-button:checked + .slider:before {
+    -webkit-transform: translateX(39px);
+    -ms-transform: translateX(39px);
+    transform: translateX(39px);
+}
+
 .lang {
     display: flex;
     flex-direction: column;
@@ -85,6 +144,60 @@ a {
     margin-right: 20px;
 }
 
+/* DARK MODE */
+
+* {
+    transition: color 0s , background-color 0.5s !important;
+}
+
+.black-color-0 {
+    color: white !important;
+}
+
+.black-color-1 .active {
+    color: #F39C12 !important;
+}
+
+.black-color-2 {
+    color: white !important;
+}
+
+.black-color-3 div:hover {
+    color: #ff1a1a !important;
+}
+
+.black-bg-0 {
+    background-color: #0A0908 !important;
+}
+
+.black-bg-1 {
+    background-color: #302e2a !important;
+}
+
+.black-bg-2 {
+    background-color: #585858 !important;
+}
+
+.black-bg-3:hover {
+    background-color: #0A0908 !important;
+}
+
+.black-bg-4 {
+    background-color: #272727 !important;
+}
+
+.black-bg-5:before {
+    background-color: white !important;
+}
+
+.black-bg-6 {
+    background-color: #484848 !important;
+}
+
+.black-border {
+    border: white solid 1px;
+}
+
 
 /* MENU */
 
@@ -97,11 +210,14 @@ a {
 }
 
 .menu img {
-    width: 20vh;
-    height: 20vh;
+    width: 150px;
+    height: 150px;
     border-radius: 100%;
     margin: auto;
-    padding: 20px 0;
+}
+
+.menu .navbar {
+    margin-top: 20px;
 }
 
 .menu nav {

@@ -7,27 +7,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="body">
     <div class="config-button" id="config-button">
         <i class="fa fa-cog" aria-hidden="true"></i>
     </div>
     <div class="config-menu" id="config-menu">
         <div class="dark-mode">
             <label for="darkmode-button" data-dico="dark-mode" class="dicojs"></label>
-            <input class="darkmode-button" id="darkmode-button" type="checkbox">
+            <label class="switch">
+                <input class="darkmode-button" id="darkmode-button" type="checkbox">
+                <span class="slider round" id="slider"></span>
+            </label>
         </div>
         <div class="lang">
             <div class="lang-text dicojs" data-dico="lang-text"></div>
             <div class="lang-flag" id="lang"></div>
         </div>
     </div>
-    <div class="menu">
-        <img src="ressources/profil.jpg" alt="profil">
-        <nav id="navbar"></nav>
+    <div class="menu" id="menu">
+        <img src="ressources/profil.jpg" alt="profil" id="profil">
+        <nav id="navbar" class="navbar"></nav>
     </div>
-    <div class="maincontent">
-        <div class="background"></div>
-        <div id="mc1" class="visible" >
+    <div class="maincontent" id="maincontent">
+        <div class="background" id="background"></div>
+        <div id="mc1" class="visible">
             <div class="container">
                 <div class="titre dicojs" data-dico="nav-1"></div>
                 <div class="name">Samuel CASAS DRAY</div>
@@ -39,7 +42,7 @@
                     </tr>
                     <tr>
                         <td class="table_titre dicojs" data-dico="about-table-2"></td>
-                        <td class="table_value"><a href="mailto:samuelcasasdray@gmail.com">samuelcasasdray@gmail.com</a></td>
+                        <td class="table_value"><a href="mailto:samuelcasasdray@gmail.com" id="mail">samuelcasasdray@gmail .com</a></td>
                     </tr>
                     <tr>
                         <td class="table_titre dicojs" data-dico="about-table-3"></td>
