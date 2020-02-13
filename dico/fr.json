@@ -3,7 +3,7 @@
   "nav-2": "Compétences",
   "nav-3": "Mes projets",
   "nav-4": "Historique",
-  "about-titre": "Etudiant a l'iut de Montpellier en informatique",
+  "about-titre": "Étudiant a l'IUT de Montpellier en informatique",
   "about-table-1": "Age",
   "about-table-2": "Adresse mail",
   "about-table-3": "Adresse postale",
@@ -11,29 +11,31 @@
   "tab-titre-1": "Projet du lycée",
   "tab-text-1-1": "Durant l'année de terminal au lycée, j'ai appris le Python (dont la lib Tkinter).\nJ'ai pu durant cette année faire une multitude d'applications et jeu dont un Pac-Man, Tetris, Sudoku, Space invader, RPG, Calculatrice, IA (très faible), Bataille navale,...",
   "tab-titre-2": "Les RPG",
-  "tab-text-2-1": "Le RPG a toujours été un jeu que j'ai apprécié a coder car il me demandait beaucoup de connaissance et cela me permettait de reprendre l'ensemble de mes connaissances.\n J'en ai fait une dizaine (en python, C++ et java), ci-dessous un exemple de RPG avec un système de monde (plusieurs cartes que l'on peut acceder via des portes), detection des bordure, récolte, inventaire (interactif), classe de personnage, argent, nourriture et vie.",
+  "tab-text-2-1": "Le RPG a toujours été un jeu que j'ai apprécié à coder car il me demandait beaucoup de connaissance et cela me permettait de reprendre l'ensemble de mes connaissances.\n J'en ai fait une dizaine (en python, C++ et java), ci-dessous un exemple de RPG avec un système de monde (plusieurs cartes que l'on peut accéder via des portes), détection des bordures, récolte, inventaire (interactif), classe de personnage, argent, nourriture et vie.",
   "tab-titre-3": "tuLoues.fr",
   "tab-text-3-1": "",
   "tab-titre-4": "L'awalé",
   "tab-text-4-1": "Au cours du semestre 3 du DUT, en équipe nous devions coder un projet dans le langage que nous voulions. Notre projet était l'Awalé et nous l'avons codé en HTML, CSS, JS.\nIl était en multijoueur (plusieurs ordinateurs connectés en local) et respectait les règles du jeu classique",
   "tab-titre-5": "Site d'e-commerce",
-  "tab-text-5-1": "Au cours du semestre 3 du DUT, en équipe nous devions coder un site d'e-Commerce en HTML, CSS, PHP avec le modele MVC. Notre theme était un magasin de sport (iDecat).\nIl y avait un panier auquel on pouvait ajouter des produits puis on pouvait payer (pas vraiment car il n'y a pas de vrai produit), une page de connexion et d'inscription pour pouvoir voir son historique d'achat, une base de donnée au model CRUD, un panneau d'administration permettant de créer, modifier, supprimer des produits, clients et commandes.\nLes mots de passe étaient hachés et un mail était envoyé pour confirmer l'inscription.",
+  "tab-text-5-1": "Au cours du semestre 3 du DUT, en équipe nous devions coder un site d'e-Commerce en HTML, CSS, PHP avec le modèle MVC. Notre thème était un magasin de sport (iDecat).\nIl y avait un panier auquel on pouvait ajouter des produits puis on pouvait payer (pas vraiment car il n'y a pas de vrai produit), une page de connexion et d'inscription pour pouvoir voir son historique d'achat, une base de donnée au modèle CRUD, un panneau d'administration permettant de créer, modifier, supprimer des produits, clients et commandes.\nLes mots de passe étaient hachés et un mail était envoyé pour confirmer l'inscription.",
   "tab-titre-6": "IHM",
   "tab-text-6-1": "En IHM, nous devions faire un CV en ligne en utilisant Materialize.\nCe fut la v1.0 de ce site.",
   "annee": {
-    "2018": {
-      "Gros titre 1": "text 1",
-      "Gros titre 2": "text 2",
-      "Gros titre 3": "text 3"
+    "2019": {
+      "BDE": "A la fin de ma première année du DUT informatique, je suis rentré dans le BDE en tant qu'organisateur événementiel",
+      "Votre Transport": "Dans le but d'acquérir une expérience du monde du travail, j'ai travaillé en tant que livreur pour la société votre Transport"
+    },
+    "2018":  {
+      "BAC": "A l'issue de ma terminale, j'ai passé l'épreuve du baccalauréat scientifique spécialité ISN, que j'ai obtenu avec mention bien",
+      "Votre Transport": "Création d'un site vitrine pour la société Votre Transport.\nCe dernier permettait de voir les informations de l'entreprise et de prendre contact avec celle-ci, le tout était connecté à une base de donnée et un admin panel permettait de modifier le site",
+      "IUT": "Entré a l'IUT en section informatique.\nDurant les 2 années passée a l'IUT j'ai participé a la vie commune du campus avec les Journées Porte Ouvertes (renseigné les futurs étudiants), l’English Day (en tant que cuisinier de gâteau et la vente mais aussi participant aux diverses activités) et Nuit de l'info (concours informatique national se déroulant chaque année)"
     },
     "2017":  {
-      "Gros titre 1": "text 1"
-    },
-    "2016":  {
-      "Gros titre 1": "text 1"
+      "Lycée": "Réalisation de divers projets (voir rubrique Mes projets)",
+      "ASSOS3034": "Réalisation d'un site d'e-commerce avec Prestashop pour ASSOS3034 dans le but d'une billetterie en ligne pour les membres."
     }
   },
   "dark-mode": "Mode sombre",
   "flag": ["fr", "en"],
-  "lang-text": "Langue : "
+  "lang-text": "Langage : "
 }

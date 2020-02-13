@@ -50,7 +50,7 @@ a {
     right: 0;
     background-color: whitesmoke;
     z-index: 1;
-    transition: width 0.3s;
+    transition: width 0.3s, background-color 0.5s;
     box-shadow: -1px 0 5px 0 #0A0908;
 }
 
@@ -92,8 +92,8 @@ a {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: .4s, background-color 0.5s;
+    transition: .4s, background-color 0.5s;
     border-radius: 34px;
 }
 
@@ -105,8 +105,8 @@ a {
     left: -13px;
     bottom: -3px;
     background-color: #0A0908;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: .4s, background-color 0.5s;
+    transition: .4s, background-color 0.5s;
     border-radius: 50%;
 }
 
@@ -147,7 +147,7 @@ a {
 /* DARK MODE */
 
 * {
-    transition: color 0s , background-color 0.5s !important;
+    transition: color 0s, background-color 0.5s;
 }
 
 .black-color-0 {
@@ -246,7 +246,7 @@ nav ul:before {
     right: 0;
     left: 0;
     bottom: 4px;
-    transition: top 0.5s, right 0.5s, left 0.5s, bottom 0.5s, opacity 0.2s;
+    transition: top 0.5s, right 0.5s, left 0.5s, bottom 0.5s, opacity 0.2s, background-color 0.5s;
 }
 
 nav ul:hover:before {
@@ -268,7 +268,7 @@ nav ul.active {
 }
 
 .maincontent > div {
-    transition: opacity 0.2s, visibility 0.2s;
+    transition: opacity 0.2s, visibility 0.2s, background-color 0.5s;
     height: 100vh;
     width: calc(100vw - 20%);
     position: absolute;
@@ -379,7 +379,7 @@ nav ul.active {
 
 #mc3 .tab-item .text-cont {
     max-height: 0;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 0.2s ease-out, background-color 0.5s;
     background: #D4B483;
     overflow: hidden;
     padding: 0 18px;
@@ -448,7 +448,7 @@ nav ul.active {
 #mc4 .text-cont-4 .annee * {
     font-size: 22px;
     padding-bottom: 5px;
-    transition: color 0.3s;
+    transition: color 0.3s, background-color 0.5s;
 }
 
 #mc4 .text-cont-4 .annee .select {
@@ -484,10 +484,6 @@ nav ul.active {
     height: 100%;
 }
 
-#mc4 .annee-item {
-    width: 30%;
-}
-
 #mc4 .annee-item .annee-item-item {
     padding: 10px;
 }
@@ -504,7 +500,7 @@ nav ul.active {
 /* ICON */
 
 .fa {
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, background-color 0.5s;
     padding: 10px 0;
     font-size: 30px;
     width: 50px;
