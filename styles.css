@@ -284,7 +284,7 @@ nav ul.active {
 .container {
     margin: auto;
     height: auto;
-    width: 50%;
+    width: max-content;
 }
 
 /* -- Page 1 -- */
@@ -301,10 +301,12 @@ nav ul.active {
 
 #mc1 table {
     border-spacing: 0 10px;
+    margin: auto;
 }
 
 #mc1 td:first-child {
     padding-right: 10px;
+    font-weight: bold;
 }
 
 #mc1 tr:not(:last-child) td {
@@ -537,4 +539,41 @@ nav ul.active {
 
 .fa-cog:hover {
     opacity: 1;
+}
+
+/* Mobile */
+
+@media (min-width: 768px) {
+    .menu {
+        width: 0;
+    }
+
+    .maincontent > div {
+        width: 100vw;
+    }
+
+    .maincontent .titre {
+        font-size: 6em;
+        text-align: center;
+    }
+
+    #mc1 .name {
+        font-size: 4em;
+        text-align: center;
+    }
+
+    #mc1 .poste {
+        font-size: 2em;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+
+    #mc1 table {
+        font-size: 1.5em;
+    }
+
+    #mc1 .fa {
+        font-size: 3em;
+        width: 1.3em;
+    }
 }
