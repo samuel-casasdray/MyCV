@@ -543,7 +543,7 @@ nav ul.active {
 
 /* Mobile */
 
-@media (min-width: 768px) {
+@media screen and (max-width: 768px) {
     .menu {
         width: 0;
     }
