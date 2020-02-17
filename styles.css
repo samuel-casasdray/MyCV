@@ -560,6 +560,7 @@ nav ul.active {
     .maincontent .titre {
         font-size: 3em;
         text-align: center;
+        text-decoration: #3B5998 dotted underline;
     }
 
     #mc1 .name {
