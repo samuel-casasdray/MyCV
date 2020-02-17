@@ -119,7 +119,11 @@ async function firstload() {
     });
     document.getElementById("config-button").onclick = () => {
         document.getElementById("config-menu").classList.add("show");
-        document.getElementById("config-menu").style.width = "20%";
+        console.log(window.innerWidth)
+        if (window.innerWidth <= 768)
+            document.getElementById("config-menu").style.width = "45%";
+        else
+            document.getElementById("config-menu").style.width = "20%";
     };
     document.onclick = async (e) => {
         if(!(e.composedPath().includes(document.getElementById("config-menu")) || e.composedPath().includes(document.getElementById("config-button")))) {
@@ -134,22 +138,22 @@ async function firstload() {
         img.classList.add("flag-item");
         img.id = flag;
         img.onclick = async () => {
-            loaddico(flag);
+            await loaddico(flag);
             document.getElementById("config-menu").style.width = "0";
             await waitms(200);
             document.getElementById("config-menu").classList.remove("show");
         };
         document.getElementById("lang").appendChild(img);
     }
-    document.getElementById("darkmode-button").onclick = () => {
+    document.getElementById("darkmode-button").onclick = async () => {
         let listid_color = [["maincontent", "background", "mc1", "mc2", "mc3", "mc4", "mail", "navbar"]];
         let listid_bg = [["body"], ["background"]];
-        for(let i=0; i < listid_color.length; i++)
-            for(let j=0; j < listid_color[i].length; j++)
+        for (let i = 0; i < listid_color.length; i++)
+            for (let j = 0; j < listid_color[i].length; j++)
                 document.getElementById(listid_color[i][j]).classList.toggle("black-color-" + i);
-        for(let i=0; i < listid_bg.length; i++)
-            for(let j=0; j < listid_bg[i].length; j++)
-                document.getElementById(listid_bg[i][j]).classList.toggle("black-bg-"+i);
+        for (let i = 0; i < listid_bg.length; i++)
+            for (let j = 0; j < listid_bg[i].length; j++)
+                document.getElementById(listid_bg[i][j]).classList.toggle("black-bg-" + i);
         document.getElementById("navbar").classList.toggle("black-color-1");
         document.getElementById("profil").classList.toggle("black-border");
         $(".star-icon").each((i, element) => {
@@ -171,7 +175,9 @@ async function firstload() {
         document.getElementById("slider").classList.toggle("black-bg-5");
         document.getElementById("config-menu").classList.toggle("black-bg-6");
         document.getElementById("config-menu").classList.toggle("black-color-0");
-
+        document.getElementById("config-menu").style.width = "0";
+        await waitms(200);
+        document.getElementById("config-menu").classList.remove("show");
     }
 }
 

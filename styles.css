@@ -554,27 +554,28 @@ nav ul.active {
     }
 
     .maincontent .titre {
-        font-size: 5em;
-        text-align: center;
-    }
-
-    #mc1 .name {
         font-size: 3em;
         text-align: center;
     }
 
+    #mc1 .name {
+        font-size: 2em;
+        text-align: center;
+    }
+
     #mc1 .poste {
-        font-size: 1.5em;
+        font-size: 1.3em;
         text-align: center;
         padding-bottom: 40px;
     }
 
     #mc1 table {
-        font-size: 1.3em;
+        font-size: 0.8em;
     }
 
     #mc1 .fa {
         font-size: 2em;
         width: 1.4em;
+        padding: 6px 0;
     }
 }
