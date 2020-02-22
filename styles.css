@@ -447,7 +447,7 @@ nav ul.active {
 
 #mc3 .tab-item .image * {
     width: 45%;
-    margin: auto;
+    margin: 5px auto;
 }
 
 #mc3 .tab-item .image.i-1 * {
