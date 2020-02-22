@@ -95,7 +95,13 @@ async function firstload() {
         for(let i = 1; i < nb+1; i++) {
             let ul = document.createElement("ul");
             ul.id = "nav-mc"+i;
-            ul.onclick = () => changerpage('mc'+i);
+            ul.onclick = () => {
+                changerpage('mc'+i);
+                if(window.outerWidth <= 768) {
+                    document.getElementById("navburger").style.display = "block";
+                    document.getElementById("menu").style.display = 'none';
+                }
+            };
             ul.dataset.dico = "nav-"+i;
             ul.classList.add("dicojs");
             if(i===1)
@@ -130,7 +136,7 @@ async function firstload() {
         else
             document.getElementById("config-menu").style.width = "20%";
     };
-    document.getElementById("navburger").onclick = () => {
+    document.getElementById("navburger-fa").onclick = () => {
         document.getElementById("navburger").style.display = "none";
         document.getElementById("menu").style.display = 'flex';
     };
@@ -141,7 +147,7 @@ async function firstload() {
             await waitms(200);
             document.getElementById("config-menu").classList.remove("show");
         }
-        if(!(temp.includes(document.getElementById('navburger')) || temp.includes(document.getElementById("menu"))) && window.outerWidth <= 768) {
+        if(!(temp.includes(document.getElementById('navburger-fa')) || temp.includes(document.getElementById("menu"))) && window.outerWidth <= 768) {
             document.getElementById("navburger").style.display = "block";
             document.getElementById("menu").style.display = 'none';
         }
