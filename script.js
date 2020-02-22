@@ -199,6 +199,7 @@ async function firstload() {
         await waitms(200);
         document.getElementById("config-menu").classList.remove("show");
     };
+    changerpage("mc3");
 }
 
 function loadannee() {
