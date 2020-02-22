@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, height=device-height">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/jpg" href="ressources/profil.jpg" />
 </head>
 <body id="body">
     <div class="config-button" id="config-button">
@@ -14,17 +15,18 @@
     </div>
     <div class="config-menu" id="config-menu">
         <div class="dark-mode">
-            <label for="darkmode-button" data-dico="dark-mode" class="dicojs"></label>
+            <label for="darkmode-button" data-dico="darkmode" class="dicojs"></label>
             <label class="switch">
                 <input class="darkmode-button" id="darkmode-button" type="checkbox">
                 <span class="slider round" id="slider"></span>
             </label>
         </div>
         <div class="lang">
-            <div class="lang-text dicojs" data-dico="lang-text"></div>
+            <div class="lang-text dicojs" data-dico="langtext"></div>
             <div class="lang-flag" id="lang"></div>
         </div>
     </div>
+    <div class="navburger" id="navburger"><i class="fa fa-bars" id="navburger-fa"></i></div>
     <div class="menu" id="menu">
         <img src="ressources/profil.jpg" alt="profil" id="profil">
         <nav id="navbar" class="navbar"></nav>
@@ -33,83 +35,81 @@
         <div class="background" id="background"></div>
         <div id="mc1" class="visible">
             <div class="container">
-                <div class="titre dicojs" data-dico="nav-1"></div>
-                <div class="name">Samuel CASAS DRAY</div>
-                <div class="poste dicojs" data-dico="about-titre"></div>
-                <table>
-                    <tr>
-                        <td class="table_titre dicojs" data-dico="about-table-1"></td>
-                        <td class="table_value">19</td>
-                    </tr>
-                    <tr>
-                        <td class="table_titre dicojs" data-dico="about-table-2"></td>
-                        <td class="table_value"><a href="mailto:samuelcasasdray@gmail.com" id="mail">samuelcasasdray@gmail .com</a></td>
-                    </tr>
-                    <tr>
-                        <td class="table_titre dicojs" data-dico="about-table-3"></td>
-                        <td class="table_value">7 avenue Saint-Lazare, 34000 Montpellier</td>
-                    </tr>
-                    <tr>
-                        <td class="table_titre dicojs" data-dico="about-table-4"></td>
-                        <td class="table_value">+33 7 60 42 87 27</td>
-                    </tr>
-                    <tr class="social-icon">
-                        <td colspan="2">
-                            <a href="https://www.facebook.com/samuel.casasdray" target="_blank">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://www.instagram.com/samuel.casasdray" target="_blank">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/samuel-casas-dray-939ab2170" target="_blank">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                            <a href="https://github.com/samuel-casasdray" target="_blank">
-                                <i class="fa fa-github" aria-hidden="true"></i>
-                            </a>
-                        </td>
-                    </tr>
-                </table>
+                <div class="part1">
+                    <div class="titre dicojs" data-dico="nav-1"></div>
+                    <div class="name">Samuel CASAS DRAY</div>
+                    <div class="poste dicojs" data-dico="about-titre"></div>
+                </div>
+                <div class="part2">
+                    <div class="about">
+                        <div class="dicojs" data-dico="about-titre2"></div>
+                        <div class="dicojs" data-dico="about-text"></div>
+                    </div>
+                    <div class="detail">
+                        <div class="dicojs" data-dico="detail-titre"></div>
+                        <div class="detail-item">
+                            <div class="dicojs" data-dico="detail-d1-titre"></div>
+                            <div class="dicojs" data-dico="detail-d1-value"></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="dicojs" data-dico="detail-d2-titre"></div>
+                            <div class="dicojs" data-dico="detail-d2-value"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="mc2" class="cache">
             <div class="container">
                 <div class="titre dicojs" data-dico="nav-2"></div>
-                <table>
-                    <tr class="star" data-star="4">
-                        <td>Javascript</td>
-                    </tr>
-                    <tr class="star" data-star="3">
-                        <td>Typescript</td>
-                    </tr>
-                    <tr class="star" data-star="5">
-                        <td>HTML</td>
-                    </tr>
-                    <tr class="star" data-star="4">
-                        <td>CSS</td>
-                    </tr>
-                    <tr class="star" data-star="4">
-                        <td>PHP</td>
-                    </tr>
-                    <tr class="star" data-star="4">
-                        <td>SQL/PLSQL</td>
-                    </tr>
-                    <tr class="star" data-star="3">
-                        <td>C++</td>
-                    </tr>
-                    <tr class="star" data-star="2">
-                        <td>C</td>
-                    </tr>
-                    <tr class="star" data-star="5">
-                        <td>Java</td>
-                    </tr>
-                    <tr class="star" data-star="4">
-                        <td>Python</td>
-                    </tr>
-                    <tr class="star" data-star="3">
-                        <td>Framework (Ionic, Cordova)</td>
-                    </tr>
-                </table>
+                <div class="list">
+                    <ul>
+                        <li class="star" data-star="4">
+                            <span>Javascript</span>
+                        </li>
+                        <li class="star" data-star="3">
+                            <span>Typescript</span>
+                        </li>
+                        <li class="star" data-star="5">
+                            <span>HTML</span>
+                        </li>
+                        <li class="star" data-star="4">
+                            <span>CSS</span>
+                        </li>
+                        <li class="star" data-star="4">
+                            <span>PHP</span>
+                        </li>
+                        <li class="star" data-star="4">
+                            <span>SQL/PLSQL</span>
+                        </li>
+                        <li class="star" data-star="3">
+                            <span>C++</span>
+                        </li>
+                        <li class="star" data-star="2">
+                            <span>C</span>
+                        </li>
+                        <li class="star" data-star="5">
+                            <span>Java</span>
+                        </li>
+                        <li class="star" data-star="4">
+                            <span>Python</span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="star" data-star="4">
+                            <span>Ionic</span>
+                        </li>
+                        <li class="star" data-star="3">
+                            <span>Cordova</span>
+                        </li>
+                        <li class="star" data-star="4">
+                            <span>Angular</span>
+                        </li>
+                        <li class="star" data-star="3">
+                            <span>Bootstrap</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div id="mc3" class="cache">
@@ -117,9 +117,9 @@
                 <div class="titre dicojs" data-dico="nav-3"></div>
                 <div class="tab">
                     <div class="tab-item">
-                        <div class="tab-titre dicojs" data-dico="tab-titre-1"></div>
+                        <div class="tab-titre dicojs" data-dico="tab-e1-titre"></div>
                         <div class="text-cont">
-                            <div class="text dicojs" data-dico="tab-text-1-1"></div>
+                            <div class="text dicojs" data-dico="tab-e1-text-1"></div>
                             <div class="image i-2spe">
                                 <img src="ressources/pacman.PNG" alt="pac-man">
                                 <img src="ressources/tetris.PNG" alt="tetris">
@@ -127,9 +127,9 @@
                         </div>
                     </div>
                     <div class="tab-item">
-                        <div class="tab-titre dicojs" data-dico="tab-titre-2"></div>
+                        <div class="tab-titre dicojs" data-dico="tab-e2-titre"></div>
                         <div class="text-cont">
-                            <div class="text dicojs" data-dico="tab-text-2-1"></div>
+                            <div class="text dicojs" data-dico="tab-e2-text-1"></div>
                             <div class="image i-3">
                                 <img src="ressources/RPG2.PNG" alt="rpg1">
                                 <img src="ressources/RPG3.PNG" alt="rpg2">
@@ -138,26 +138,26 @@
                         </div>
                     </div>
                     <div class="tab-item">
-                        <div class="tab-titre dicojs" data-dico="tab-titre-3"></div>
+                        <div class="tab-titre dicojs" data-dico="tab-e3-titre"></div>
                         <div class="text-cont">
-                            <div class="text dicojs" data-dico="tab-text-3-1"></div>
+                            <div class="text dicojs" data-dico="tab-e3-text-1"></div>
                             <div class="image">
                             </div>
                         </div>
                     </div>
                     <div class="tab-item">
-                        <div class="tab-titre dicojs" data-dico="tab-titre-4"></div>
+                        <div class="tab-titre dicojs" data-dico="tab-e4-titre"></div>
                         <div class="text-cont">
-                            <div class="text dicojs" data-dico="tab-text-4-1"></div>
+                            <div class="text dicojs" data-dico="tab-e4-text-1"></div>
                             <div class="image i-1">
                                 <img src="ressources/Awale.PNG" alt="Awale">
                             </div>
                         </div>
                     </div>
                     <div class="tab-item">
-                        <div class="tab-titre dicojs" data-dico="tab-titre-5"></div>
+                        <div class="tab-titre dicojs" data-dico="tab-e5-titre"></div>
                         <div class="text-cont">
-                            <div class="text dicojs" data-dico="tab-text-5-1"></div>
+                            <div class="text dicojs" data-dico="tab-e5-text-1"></div>
                             <div class="image i-3">
                                 <img src="ressources/e-commerce1.png" alt="e-commerce1">
                                 <img src="ressources/e-commerce2.png" alt="e-commerce2">
@@ -166,9 +166,9 @@
                         </div>
                     </div>
                     <div class="tab-item">
-                        <div class="tab-titre dicojs" data-dico="tab-titre-6"></div>
+                        <div class="tab-titre dicojs" data-dico="tab-e6-titre"></div>
                         <div class="text-cont">
-                            <div class="text dicojs" data-dico="tab-text-6-1"></div>
+                            <div class="text dicojs" data-dico="tab-e6-text-1"></div>
                             <div class="image i-3">
                             </div>
                         </div>
@@ -184,6 +184,20 @@
                     <div class="text-annee" data-dico="text-annee-list" id="text-annee"></div>
                 </div>
             </div>
+        </div>
+        <div id="mc5" class="cache">
+            <a href="https://www.facebook.com/samuel.casasdray" target="_blank">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/samuel.casasdray" target="_blank">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/samuel-casas-dray-939ab2170" target="_blank">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/samuel-casasdray" target="_blank">
+                <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
     <script src="script.js"></script>

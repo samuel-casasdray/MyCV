@@ -16,7 +16,7 @@ body {
     height: 100vh !important;
     width: 100% !important;
     margin: 0;
-    background-color: #F39C12;
+    background-color: #00C9C9;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -199,8 +199,12 @@ a {
     border: white solid 1px;
 }
 
-
 /* MENU */
+
+.navburger {
+    display: none;
+    z-index: 2;
+}
 
 .menu {
     width: 20%;
@@ -265,7 +269,7 @@ nav ul.active {
 /* MAINCONTENT */
 
 .maincontent .background {
-    background-color: #EAE0D5;
+    background-color: #F0F7F4;
 }
 
 .maincontent > div {
@@ -279,16 +283,34 @@ nav ul.active {
 
 .maincontent .titre {
     font-size: 42px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
+    color: #00A2E8;
 }
 
 .container {
     margin: auto;
     height: auto;
-    width: max-content;
+    width: 60%;
 }
 
 /* -- Page 1 -- */
+
+#mc1 .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#mc1 .part1 {
+    border-bottom: 1px darkgray solid;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#mc1 .part2 {
+    display: flex;
+    flex-direction: row;
+}
 
 #mc1 .name {
     font-size: 24px;
@@ -300,50 +322,67 @@ nav ul.active {
     padding-bottom: 20px;
 }
 
-#mc1 table {
-    border-spacing: 0 10px;
-    margin: auto;
+#mc1 .part2 > div > div:first-child {
+    color: #00A2E8;
+    font-size: 1.5em;
+    padding-bottom: 10px;
 }
 
-#mc1 td:first-child {
+#mc1 .about {
+    width: 55%;
+}
+
+#mc1 .detail {
+    width: 35%;
+}
+
+#mc1 .detail-item div:first-child {
     padding-right: 10px;
     font-weight: bold;
 }
 
-#mc1 tr:not(:last-child) td {
-    padding-bottom: 10px;
-    border-bottom: 1px solid #0A0908;
-}
-
-#mc1 tr:not(:last-child) {
-    padding-bottom: 10px;
-}
-
-#mc1 .social-icon td {
-    text-align: center;
-}
-
-#mc1 .social-icon div {
-    margin: auto;
+#mc1 .detail-item {
+    display: flex;
+    flex-direction: row;
 }
 
 /* Page 2 */
 
-#mc2 table {
-    border-spacing: 0;
+#mc2 .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-#mc2 .star td {
-    border-bottom: 1px solid #0A0908;
+#mc2 ul {
+    list-style: none;
+    max-width: 49%;
+    width: 45%;
+    padding: 0;
+}
+
+#mc2 .star {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#mc2 .star:hover {
+    background-color: #e7e6e6;
+}
+
+#mc2 .star span {
     padding: 1px 2px;
+    font-size: 1em;
+    transition: color 0s, background-color 0.5s, padding 0.2s;
 }
 
-#mc2 .star td:first-child {
-    padding-right: 20px;
+#mc2 .star .star-icon{
+    color: #d3d4d4;
 }
 
-#mc2 .star td:not(:first-child) {
-    color: #0A0908;
+#mc2 .star:hover .star-icon {
+    padding-left: 4px;
 }
 
 #mc2 .star .star-icon::before {
@@ -351,7 +390,7 @@ nav ul.active {
 }
 
 #mc2 .star .star-icon.check {
-    color: #D5A021;
+    color: #00C9C9;
 }
 
 /* Page 3 */
@@ -364,7 +403,7 @@ nav ul.active {
 }
 
 #mc3 .tab-item {
-    background-color: #F0F7F4;
+    background-color: #FBFCFF;
     font-size: 18px;
 }
 
@@ -542,11 +581,43 @@ nav ul.active {
     opacity: 1;
 }
 
+.fa-bars {
+    color: #0A0908;
+}
+
 /* Mobile */
 
 @media screen and (max-width: 768px) {
     .menu {
-        width: 0;
+        display: none;
+        width: 30%;
+        padding: 10% 0 100% 0;
+        background-color: #00C9C9;
+        z-index: 1;
+        height: 100%;
+        margin: 0;
+    }
+
+    .navburger {
+        display: block;
+    }
+
+    .menu img {
+        width: 60%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .navbar *{
+        font-size: 1em;
+    }
+
+    .navbar ul {
+        margin: 5px 0;
+    }
+
+    .maincontent {
+        position: absolute;
     }
 
     .maincontent > div {
@@ -560,7 +631,6 @@ nav ul.active {
     .maincontent .titre {
         font-size: 3em;
         text-align: center;
-        text-decoration: #3B5998 dotted underline;
     }
 
     #mc1 .name {
@@ -582,5 +652,20 @@ nav ul.active {
         font-size: 2em;
         width: 1.4em;
         padding: 6px 0;
+    }
+
+    #mc1 .part2 .detail-item {
+        flex-direction: column;
+    }
+
+    #mc2 ul {
+        width: 80%;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #mc2 .list {
+        flex-direction: column;
     }
 }

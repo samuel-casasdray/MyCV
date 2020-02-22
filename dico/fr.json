@@ -1,25 +1,70 @@
 {
-  "nav-1": "A propos de moi",
-  "nav-2": "Compétences",
-  "nav-3": "Mes projets",
-  "nav-4": "Historique",
-  "about-titre": "Étudiant a l'IUT de Montpellier en informatique",
-  "about-table-1": "Age",
-  "about-table-2": "Adresse mail",
-  "about-table-3": "Adresse postale",
-  "about-table-4": "Numéro de téléphone",
-  "tab-titre-1": "Projet du lycée",
-  "tab-text-1-1": "Durant l'année de terminal au lycée, j'ai appris le Python (dont la lib Tkinter).\nJ'ai pu durant cette année faire une multitude d'applications et jeu dont un Pac-Man, Tetris, Sudoku, Space invader, RPG, Calculatrice, IA (très faible), Bataille navale,...",
-  "tab-titre-2": "Les RPG",
-  "tab-text-2-1": "Le RPG a toujours été un jeu que j'ai apprécié à coder car il me demandait beaucoup de connaissance et cela me permettait de reprendre l'ensemble de mes connaissances.\n J'en ai fait une dizaine (en python, C++ et java), ci-dessous un exemple de RPG avec un système de monde (plusieurs cartes que l'on peut accéder via des portes), détection des bordures, récolte, inventaire (interactif), classe de personnage, argent, nourriture et vie.",
-  "tab-titre-3": "tuLoues.fr",
-  "tab-text-3-1": "",
-  "tab-titre-4": "L'awalé",
-  "tab-text-4-1": "Au cours du semestre 3 du DUT, en équipe nous devions coder un projet dans le langage que nous voulions. Notre projet était l'Awalé et nous l'avons codé en HTML, CSS, JS.\nIl était en multijoueur (plusieurs ordinateurs connectés en local) et respectait les règles du jeu classique",
-  "tab-titre-5": "Site d'e-commerce",
-  "tab-text-5-1": "Au cours du semestre 3 du DUT, en équipe nous devions coder un site d'e-Commerce en HTML, CSS, PHP avec le modèle MVC. Notre thème était un magasin de sport (iDecat).\nIl y avait un panier auquel on pouvait ajouter des produits puis on pouvait payer (pas vraiment car il n'y a pas de vrai produit), une page de connexion et d'inscription pour pouvoir voir son historique d'achat, une base de donnée au modèle CRUD, un panneau d'administration permettant de créer, modifier, supprimer des produits, clients et commandes.\nLes mots de passe étaient hachés et un mail était envoyé pour confirmer l'inscription.",
-  "tab-titre-6": "IHM",
-  "tab-text-6-1": "En IHM, nous devions faire un CV en ligne en utilisant Materialize.\nCe fut la v1.0 de ce site.",
+  "nav": {
+    "1": "Profil",
+    "2": "Compétences",
+    "3": "Mes projets",
+    "4": "Historique"
+  },
+  "about": {
+    "titre": "Étudiant a l'IUT de Montpellier en informatique",
+    "table": {
+      "1": "Age",
+      "2": "Adresse mail",
+      "3": "Adresse postale",
+      "4": "Numéro de téléphone"
+    },
+    "titre2": "A propos de moi",
+    "text": "blablabla"
+  },
+  "detail": {
+    "titre": "Details",
+    "d1": {
+      "titre": "Age:",
+      "value": 19
+    },
+    "d2": {
+      "titre": "Adresse:",
+      "value": "7 avenue Saint Lazare,<br>34000 Montpellier"
+    }
+  },
+  "tab" : {
+    "e1": {
+      "titre": "Projet du lycée",
+      "text": {
+        "1": "Durant l'année de terminal au lycée, j'ai appris le Python (dont la lib Tkinter).\nJ'ai pu durant cette année faire une multitude d'applications et jeu dont un Pac-Man, Tetris, Sudoku, Space invader, RPG, Calculatrice, IA (très faible), Bataille navale,..."
+      }
+    },
+    "e2": {
+      "titre": "Les RPG",
+      "text": {
+        "1": "Le RPG a toujours été un jeu que j'ai apprécié à coder car il me demandait beaucoup de connaissance et cela me permettait de reprendre l'ensemble de mes connaissances.\n J'en ai fait une dizaine (en python, C++ et java), ci-dessous un exemple de RPG avec un système de monde (plusieurs cartes que l'on peut accéder via des portes), détection des bordures, récolte, inventaire (interactif), classe de personnage, argent, nourriture et vie."
+      }
+    },
+    "e3": {
+      "titre": "tuLoues.fr",
+      "text": {
+        "1": ""
+      }
+    },
+    "e4": {
+      "titre": "L'awalé",
+      "text": {
+        "1": "Au cours du semestre 3 du DUT, en équipe nous devions coder un projet dans le langage que nous voulions. Notre projet était l'Awalé et nous l'avons codé en HTML, CSS, JS.\nIl était en multijoueur (plusieurs ordinateurs connectés en local) et respectait les règles du jeu classique"
+      }
+    },
+    "e5": {
+      "titre": "Site d'e-commerce",
+      "text": {
+        "1": "Au cours du semestre 3 du DUT, en équipe nous devions coder un site d'e-Commerce en HTML, CSS, PHP avec le modèle MVC. Notre thème était un magasin de sport (iDecat).\nIl y avait un panier auquel on pouvait ajouter des produits puis on pouvait payer (pas vraiment car il n'y a pas de vrai produit), une page de connexion et d'inscription pour pouvoir voir son historique d'achat, une base de donnée au modèle CRUD, un panneau d'administration permettant de créer, modifier, supprimer des produits, clients et commandes.\nLes mots de passe étaient hachés et un mail était envoyé pour confirmer l'inscription."
+      }
+    },
+    "e6": {
+      "titre": "IHM",
+      "text": {
+        "1": "En IHM, nous devions faire un CV en ligne en utilisant Materialize.\nCe fut la v1.0 de ce site."
+      }
+    }
+  },
   "annee": {
     "2019": {
       "BDE": "A la fin de ma première année du DUT informatique, je suis rentré dans le BDE en tant qu'organisateur événementiel",
@@ -35,7 +80,7 @@
       "ASSOS3034": "Réalisation d'un site d'e-commerce avec Prestashop pour ASSOS3034 dans le but d'une billetterie en ligne pour les membres."
     }
   },
-  "dark-mode": "Mode sombre",
+  "darkmode": "Mode sombre",
   "flag": ["fr", "en"],
-  "lang-text": "Langage : "
+  "langtext": "Langage : "
 }

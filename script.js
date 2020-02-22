@@ -49,10 +49,12 @@ function loaddico(lang) {
 function applydico(json) {
     return new Promise(callback => {
         $('.dicojs').each((i, element) => {
-            let text = json[element.dataset.dico];
+            let value = json;
+            for(let i of element.dataset.dico.split('-'))
+                value = value[i];
             if(element.dataset.dico.startsWith("tab-text"))
-                text = "<div>" + text.replace(/\n/g, "</div><div>") + "</div>";
-            element.innerHTML = text;
+                value = "<div>" + text.replace(/\n/g, "</div><div>") + "</div>";
+            element.innerHTML = value;
         });
         try {
             loadannee();
@@ -76,17 +78,20 @@ function applydico(json) {
 
 async function firstload() {
     $('.star').each((i, element) => {
+        let cont = document.createElement("div");
+        cont.classList.add("star-cont");
         for (let j = 0; j < 5; j++) {
-            let td = document.createElement("td");
-            td.classList.add("star-icon");
+            let span = document.createElement("span");
+            span.classList.add("star-icon");
             if(element.dataset.star > j)
-                td.classList.add("check");
-            element.appendChild(td);
+                span.classList.add("check");
+            cont.appendChild(span);
         }
+        element.appendChild(cont);
     });
     json_global = await loaddico("fr");
     $('#navbar').each((i,element) => {
-        let nb = countkeys(json_global, "nav");
+        let nb = Object.keys(json_global["nav"]).length;
         for(let i = 1; i < nb+1; i++) {
             let ul = document.createElement("ul");
             ul.id = "nav-mc"+i;
@@ -125,11 +130,20 @@ async function firstload() {
         else
             document.getElementById("config-menu").style.width = "20%";
     };
+    document.getElementById("navburger").onclick = () => {
+        document.getElementById("navburger").style.display = "none";
+        document.getElementById("menu").style.display = 'flex';
+    };
     document.onclick = async (e) => {
-        if(!(e.composedPath().includes(document.getElementById("config-menu")) || e.composedPath().includes(document.getElementById("config-button")))) {
+        var temp = e.composedPath();
+        if(!(temp.includes(document.getElementById("config-menu")) || temp.includes(document.getElementById("config-button")))) {
             document.getElementById("config-menu").style.width = "0";
             await waitms(200);
             document.getElementById("config-menu").classList.remove("show");
+        }
+        if(!(temp.includes(document.getElementById('navburger')) || temp.includes(document.getElementById("menu"))) && window.outerWidth <= 768) {
+            document.getElementById("navburger").style.display = "block";
+            document.getElementById("menu").style.display = 'none';
         }
     };
     for(let flag of json_global["flag"]) {
@@ -146,8 +160,8 @@ async function firstload() {
         document.getElementById("lang").appendChild(img);
     }
     document.getElementById("darkmode-button").onclick = async () => {
-        let listid_color = [["maincontent", "background", "mc1", "mc2", "mc3", "mc4", "mail", "navbar"]];
-        let listid_bg = [["body"], ["background"]];
+        let listid_color = [["maincontent", "background", "mc1", "mc2", "mc3", "mc4", "navbar", "navburger-fa"]];
+        let listid_bg = [["body", "menu"], ["background"]];
         for (let i = 0; i < listid_color.length; i++)
             for (let j = 0; j < listid_color[i].length; j++)
                 document.getElementById(listid_color[i][j]).classList.toggle("black-color-" + i);
@@ -178,16 +192,7 @@ async function firstload() {
         document.getElementById("config-menu").style.width = "0";
         await waitms(200);
         document.getElementById("config-menu").classList.remove("show");
-    }
-}
-
-function countkeys(liste, vari) {
-    let i = 0;
-    for(let key of Object.keys(liste)) {
-        if(key.toString().startsWith(vari))
-            i++;
-    }
-    return i;
+    };
 }
 
 function loadannee() {

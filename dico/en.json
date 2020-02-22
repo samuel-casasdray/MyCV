@@ -1,25 +1,70 @@
 {
-  "nav-1": "About me",
-  "nav-2": "Skills",
-  "nav-3": "My project",
-  "nav-4": "My history",
-  "about-titre": "Student at IUT-Montpellier in informatic division",
-  "about-table-1": "Age",
-  "about-table-2": "Email",
-  "about-table-3": "Adress",
-  "about-table-4": "Phone",
-  "tab-titre-1": "High school's project",
-  "tab-text-1-1": "During the last year of high school, I learned Python (whose Tkinter)\nI do a lot of software and game whose Pac-Man, Tetris, Sudoku, Space invader, RPG, Calculator, AI (low), Battleship,...",
-  "tab-titre-2": "RPG",
-  "tab-text-2-1": "The RPG has been always a game that I enjoyed because it asks me a lot of knowledge and it permit me to resume all of my knowledge in one game.\n I made a dozen (in Python, C++ and Java), below an exemple with a system of world(many map that can be accessed by door), edge detection, harvest, inventory (interactive), charactere class, money, food and life.",
-  "tab-titre-3": "tuLoues.fr",
-  "tab-text-3-1": "",
-  "tab-titre-4": "Awale",
-  "tab-text-4-1": "During the third semester of DUT, in teams we had to code a project in the language we wanted. Our project was the awale and we coded it in HTML, CSS, JS.\nIt was in multiplayer (2 computer connected in local) and respected the rules of classic game.",
-  "tab-titre-5": "E-commerce website",
-  "tab-text-5-1": "Au cours du semestre 3 du DUT, en équipe nous devions coder un site d'e-Commerce en HTML, CSS, PHP avec le modele MVC. Notre theme était un magasin de sport (iDecat).\nIl y avait un panier auquel on pouvait ajouter des produits puis on pouvait payer (pas vraiment car il n'y a pas de vrai produit), une page de connexion et d'inscription pour pouvoir voir son historique d'achat, une base de donnée au model CRUD, un panneau d'administration permettant de créer, modifier, supprimer des produits, clients et commandes.\nLes mots de passe étaient hachés et un mail était envoyé pour confirmer l'inscription.",
-  "tab-titre-6": "IHM",
-  "tab-text-6-1": "En IHM, nous devions faire un CV en ligne en utilisant Materialize.\nCe fut la v1.0 de ce site.",
+  "nav": {
+    "1": "Profile",
+    "2": "Skills",
+    "3": "My project",
+    "4": "My history"
+  },
+  "about": {
+    "titre": "Student at IUT-Montpellier in informatic division",
+    "table": {
+      "1": "Age",
+      "2": "Email",
+      "3": "Adress",
+      "4": "Phone"
+    },
+    "titre2": "About me",
+    "text": "blablabla"
+  },
+  "detail": {
+    "titre": "Details",
+    "d1": {
+      "titre": "Age",
+      "value": 19
+    },
+    "d2": {
+      "titre": "Address",
+      "value": "7 avenue Saint Lazare, 34000 Montpellier"
+    }
+  },
+  "tab" : {
+    "e1": {
+      "titre": "High school's project",
+      "text": {
+        "1": "During the last year of high school, I learned Python (whose Tkinter)\nI do a lot of software and game whose Pac-Man, Tetris, Sudoku, Space invader, RPG, Calculator, AI (low), Battleship,..."
+      }
+    },
+    "e2": {
+      "titre": "RPG",
+      "text": {
+        "1": "The RPG has been always a game that I enjoyed because it asks me a lot of knowledge and it permit me to resume all of my knowledge in one game.\n I made a dozen (in Python, C++ and Java), below an exemple with a system of world(many map that can be accessed by door), edge detection, harvest, inventory (interactive), charactere class, money, food and life."
+      }
+    },
+    "e3": {
+      "titre": "tuLoues.fr",
+      "text": {
+        "1": ""
+      }
+    },
+    "e4": {
+      "titre": "L'awalé",
+      "text": {
+        "1": "During the third semester of DUT, in teams we had to code a project in the language we wanted. Our project was the awale and we coded it in HTML, CSS, JS.\nIt was in multiplayer (2 computer connected in local) and respected the rules of classic game."
+      }
+    },
+    "e5": {
+      "titre": "E-commerce website",
+      "text": {
+        "1": "Au cours du semestre 3 du DUT, en équipe nous devions coder un site d'e-Commerce en HTML, CSS, PHP avec le modele MVC. Notre theme était un magasin de sport (iDecat).\nIl y avait un panier auquel on pouvait ajouter des produits puis on pouvait payer (pas vraiment car il n'y a pas de vrai produit), une page de connexion et d'inscription pour pouvoir voir son historique d'achat, une base de donnée au model CRUD, un panneau d'administration permettant de créer, modifier, supprimer des produits, clients et commandes.\nLes mots de passe étaient hachés et un mail était envoyé pour confirmer l'inscription."
+      }
+    },
+    "e6": {
+      "titre": "IHM",
+      "text": {
+        "1": "En IHM, nous devions faire un CV en ligne en utilisant Materialize.\nCe fut la v1.0 de ce site."
+      }
+    }
+  },
   "annee": {
     "2019": {
       "BDE": "A la fin de ma première année du DUT informatique, je suis rentré dans le BDE en tant qu'organisateur événementiel",
@@ -35,7 +80,7 @@
       "ASSOS3034": "Réalisation d'un site d'e-commerce avec Prestashop pour ASSOS3034 dans le but d'une billetterie en ligne pour les membres."
     }
   },
-  "dark-mode": "Dark mode",
+  "darkmode": "Dark mode",
   "flag": ["fr", "en"],
-  "lang-text": "Language : "
+  "langtext": "Language : "
 }
