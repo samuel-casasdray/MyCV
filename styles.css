@@ -17,8 +17,8 @@ body {
     width: 100% !important;
     margin: 0;
     background-color: #00C9C9;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    /*overflow-x: hidden;
+    overflow-y: hidden;*/
 }
 
 a {
@@ -451,22 +451,22 @@ nav ul.active {
     margin: 5px auto;
 }
 
-/*#mc3 .tab-item .image.i-1 * {
-    width: 18em;
+#mc3 .tab-item .image.i-1 * {
+    max-width: 18em;
 }
 
 
 #mc3 .tab-item .image.i-2spe * {
-    width: 8em;
+    max-width: 8em;
 }
 
 #mc3 .tab-item .image.i-3 * {
-    width: 10em;
+    max-width: 10em;
 }
 
 #mc3 .tab-item .image.i-4 * {
-    width: 5em;
-}*/
+    max-width: 5em;
+}
 
 /* Page 4 */
 
@@ -588,17 +588,17 @@ nav ul.active {
 
 /* Mobile */
 
-/*@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1250px) {
     #mc3 .tab-item .image.i-3 * {
-        width: 8em;
+        max-width: 8em;
     }
 }
 
 @media screen and (max-width: 1024px) {
     #mc3 .tab-item .image.i-3 * {
-        width: 6em;
+        max-width: 6em;
     }
-}*/
+}
 
 @media screen and (max-width: 768px) {
     .menu {
@@ -682,34 +682,34 @@ nav ul.active {
         flex-direction: column;
     }
 
-    /*#mc3 .tab-item .image.i-3 * {
-        width: 10em;
-    }*/
+    #mc3 .tab-item .image.i-3 * {
+        max-width: 10em;
+    }
 }
 
-/*
+
 @media screen and (max-width: 630px) {
     #mc3 .tab-item .image.i-3 * {
-        width: 8em;
+        max-width: 8em;
     }
 }
 
 @media screen and (max-width: 510px) {
     #mc3 .tab-item .image.i-3 * {
-        width: 6em;
+        max-width: 6em;
     }
 }
 
 @media screen and (max-width: 400px) {
     #mc3 .tab-item .image.i-1 * {
-        width: 15em;
+        max-width: 15em;
     }
 
     #mc3 .tab-item .image.i-2spe * {
-        width: 6em;
+        max-width: 6em;
     }
 
     #mc3 .tab-item .image.i-3 * {
-        width: 4em;
+        max-width: 4em;
     }
-}*/
+}
