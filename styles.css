@@ -446,11 +446,12 @@ nav ul.active {
 }
 
 #mc3 .tab-item .image * {
-    width: 3em;
+    width: auto;
+    height: auto;
     margin: 5px auto;
 }
 
-#mc3 .tab-item .image.i-1 * {
+/*#mc3 .tab-item .image.i-1 * {
     width: 18em;
 }
 
@@ -465,7 +466,7 @@ nav ul.active {
 
 #mc3 .tab-item .image.i-4 * {
     width: 5em;
-}
+}*/
 
 /* Page 4 */
 
@@ -587,7 +588,7 @@ nav ul.active {
 
 /* Mobile */
 
-@media screen and (max-width: 1250px) {
+/*@media screen and (max-width: 1250px) {
     #mc3 .tab-item .image.i-3 * {
         width: 8em;
     }
@@ -597,7 +598,7 @@ nav ul.active {
     #mc3 .tab-item .image.i-3 * {
         width: 6em;
     }
-}
+}*/
 
 @media screen and (max-width: 768px) {
     .menu {
@@ -681,11 +682,12 @@ nav ul.active {
         flex-direction: column;
     }
 
-    #mc3 .tab-item .image.i-3 * {
+    /*#mc3 .tab-item .image.i-3 * {
         width: 10em;
-    }
+    }*/
 }
 
+/*
 @media screen and (max-width: 630px) {
     #mc3 .tab-item .image.i-3 * {
         width: 8em;
@@ -710,4 +712,4 @@ nav ul.active {
     #mc3 .tab-item .image.i-3 * {
         width: 4em;
     }
-}
+}*/
