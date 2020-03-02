@@ -1,0 +1,28 @@
+#grille > img {
+    position: absolute;
+    z-index: -1;
+}
+
+#grille .cont {
+    min-width: 400px;
+    min-height: 400px;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+#grille .cont img, #grille .cont .img_vide {
+    min-width: 20px;
+    min-height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+}
+
+#grille .cont {
+    display: flex;
+    flex-direction: column;
+}
+
+#grille .row {
+    display: flex;
+    flex-direction: row;
+}
