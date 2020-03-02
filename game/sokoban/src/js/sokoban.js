@@ -86,7 +86,7 @@ class Sokoban {
         let c = sokoban.cases[y][x][sokoban.cases[y][x].length - 1];
         let cb = sokoban.cases[yb][xb][sokoban.cases[yb][xb].length - 1];
         if(c.element.typec === 'caisse') {
-            if(cb.element.typec !== 'brique') {
+            if(cb.element.typec !== 'brique' && cb.element.typec !== 'caisse') {
                 sokoban.ajouterCase(x, y, xb, yb);
             }
         }

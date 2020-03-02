@@ -16,7 +16,7 @@ body {
     height: 100vh !important;
     width: 100% !important;
     margin: 0;
-    background-color: #00C9C9;
+    background-color: #79E7FF;
     /*overflow-x: hidden;
     overflow-y: hidden;*/
 }
@@ -30,7 +30,7 @@ a {
 
 .config-button {
     position: absolute;
-    bottom: 100px;
+    bottom: 20px;
     right: 20px;
     background-color: #0A0908;
     border-radius: 100%;
@@ -422,7 +422,7 @@ nav ul.active {
 #mc3 .tab-item .text-cont {
     max-height: 0;
     transition: max-height 0.2s ease-out, background-color 0.5s;
-    background: #D4B483;
+    background: #BCF3FF;
     overflow: hidden;
     padding: 0 18px;
 }
@@ -433,7 +433,7 @@ nav ul.active {
     padding: 10px 0;
 }
 
-#mc3 .tab-item .text div {
+#mc3 .tab-item .text {
     padding: 3px 0;
     text-align: justify;
 }
@@ -449,6 +449,7 @@ nav ul.active {
     width: auto;
     height: auto;
     margin: 5px auto;
+    box-shadow: 0 2px 5px 1px rgba(79, 79, 79, 0.75);
 }
 
 #mc3 .tab-item .image.i-1 * {
