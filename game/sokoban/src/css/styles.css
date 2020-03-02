@@ -1,3 +1,14 @@
+body > div {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: max-content;
+}
+
+body > div:not(#grille) > * {
+    margin: 0 10px;
+}
+
 #grille > img {
     position: absolute;
     z-index: -1;

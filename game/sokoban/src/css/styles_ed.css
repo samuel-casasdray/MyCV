@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+.case {
+    display: flex;
+    flex-direction: column;
+}
+
+.case * {
+    margin: 5px 20px;
+}
+
+.grille > div {
+    height: 20px;
+}

@@ -1,13 +1,22 @@
 
 class Sokoban {
 
+    nblevel = 4;
+
     constructor() {
-        this.loadall(1).then(r => {});
         this.list = [new Elem('brique.png'), new Elem('caisse.png'), new Elem('drapeau.png'), new Elem('joueur.gif'), new Elem(null)];
+        this.start().then(r => {});
     }
 
-    async loadall(nb) {
-        let niveau = await this.chargerNiveau('level/lvl'+nb+'.json');
+    async start() {
+        let niveau = await this.chargerNiveau('level/lvl1.json');
+        this.nb = 1;
+        this.loadall(niveau).then(r => {});
+    }
+
+    async loadall(niveau) {
+        if(typeof niveau === "string")
+            niveau = JSON.parse(niveau);
         this.cases = [];
         let l = 0;
         for(let ligne in niveau) {
@@ -15,17 +24,27 @@ class Sokoban {
             let row = [];
             for(let col of niveau[ligne]) {
                 row.push([new Case(c, l, this.list[col])]);
-                if(col === "3") this.persoco = [c, l];
+                if(col === "3" || col === 3) this.persoco = [c, l];
                 c++;
             }
             this.cases.push(row);
             l++;
         }
         this.affichage();
-        console.log(this.persoco);
         document.addEventListener("keydown", this.deplacement, true);
-        document.getElementById("recommencer").onclick = () => this.loadall(nb);
+        document.getElementById("recommencer").onclick = () => this.loadall(niveau);
         document.getElementById("autre_niveau").onclick = () => this.autre_niveau();
+        document.getElementById('fileload').addEventListener('change', this.changefile, false);
+
+    }
+
+    changefile(evt) {
+        let file = document.getElementById('fileload').files[0];
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            sokoban.loadall(reader.result).then(r => {});
+        };
+        reader.readAsText(file);
     }
 
     chargerNiveau(src) {
@@ -107,10 +126,14 @@ class Sokoban {
         return true;
     }
 
-    autre_niveau() {
-        let nb = Math.floor(Math.random() * 2) + 1;
-        console.log(nb);
-        this.loadall(nb).then(r => {});
+    async autre_niveau() {
+        let nb
+        do {
+            nb = Math.floor(Math.random() * this.nblevel) + 1;
+        } while (nb === this.nb);
+        this.nb = nb;
+        let nv = await this.chargerNiveau('level/lvl'+nb+'.json');
+        this.loadall(nv).then(r => {});
     }
 
 }

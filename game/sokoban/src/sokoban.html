@@ -6,13 +6,18 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<div id="niveau"></div>
 	<div id="grille">
 		<img src="images/fond.png">
 	</div>
 	<div id="compteur"></div>
-	<input type="button" value="recommencer" id="recommencer">
-	<input type="button" value="autre niveau" id="autre_niveau">
+	<div>
+		<input type="button" value="recommencer" id="recommencer">
+		<input type="button" value="autre niveau" id="autre_niveau">
+	</div>
+	<div>
+		<input type="file" accept="application/json" id="fileload">
+		<a href="sokoban_editor.html">Editeur de sokoban</a>
+	</div>
 	<script src="js/elem.js"></script>
 	<script src="js/case.js"></script>
 	<script src="js/sokoban.js"></script>
