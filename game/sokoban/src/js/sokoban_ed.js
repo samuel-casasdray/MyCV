@@ -12,7 +12,7 @@ class Sokoban_ed {
         for (let i = 0; i < 20; i++) {
             let row = [];
             for (let j = 0; j < 20; j++) {
-                row.push(0);
+                row.push(4);
             }
             this.level.push(row);
         }

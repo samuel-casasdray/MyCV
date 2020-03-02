@@ -12,11 +12,24 @@
 	<div id="compteur"></div>
 	<div>
 		<input type="button" value="recommencer" id="recommencer">
-		<input type="button" value="autre niveau" id="autre_niveau">
+		<input type="button" value="niveau suivant" id="niveau_suivant" style="display: none">
 	</div>
 	<div>
 		<input type="file" accept="application/json" id="fileload">
 		<a href="sokoban_editor.html">Editeur de sokoban</a>
+	</div>
+	<div class="col">
+		<p id="lvl"></p>
+		<p id="text">Ce jeu est le sokoban. Pour jouer utilisez les fleches de votre clavier. Le but est de mettre
+			les caisses dans les emplacements prevu a cette effet</p>
+		<div class="col">
+			<div class="row">
+				Caisse :&nbsp;&nbsp;<img src="images/caisse.png">
+			</div>
+			<div class="row">
+				Drapeau (case ou les caisses doivent etre mis :&nbsp;&nbsp;<img src="images/drapeau.png">
+			</div>
+		</div>
 	</div>
 	<script src="js/elem.js"></script>
 	<script src="js/case.js"></script>

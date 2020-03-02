@@ -33,9 +33,9 @@ class Sokoban {
         this.affichage();
         document.addEventListener("keydown", this.deplacement, true);
         document.getElementById("recommencer").onclick = () => this.loadall(niveau);
-        document.getElementById("autre_niveau").onclick = () => this.autre_niveau();
+        document.getElementById("niveau_suivant").onclick = () => this.niveau_suivant();
         document.getElementById('fileload').addEventListener('change', this.changefile, false);
-
+        document.getElementById()
     }
 
     changefile(evt) {
@@ -123,16 +123,15 @@ class Sokoban {
                 if (col[0].estUneCaisse())
                     return false;
         document.removeEventListener("keydown", this.deplacement, true);
+        document.getElementById("niveau_suivant").style.display = "block";
         return true;
     }
 
-    async autre_niveau() {
-        let nb
-        do {
-            nb = Math.floor(Math.random() * this.nblevel) + 1;
-        } while (nb === this.nb);
-        this.nb = nb;
-        let nv = await this.chargerNiveau('level/lvl'+nb+'.json');
+    async niveau_suivant() {
+        this.nb++;
+        if(this.nb === this.nblevel) this.nb = 1;
+        document.getElementById("niveau_suivant").style.display = "none";
+        let nv = await this.chargerNiveau('level/lvl'+this.nb+'.json');
         this.loadall(nv).then(r => {});
     }
 
