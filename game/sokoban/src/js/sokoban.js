@@ -90,7 +90,7 @@ class Sokoban {
                 sokoban.ajouterCase(x, y, xb, yb);
             }
         }
-        if(c.element.typec !== 'brique' && !(c.element.typec === 'caisse' && cb.element.typec === 'brique')) {
+        if(c.element.typec !== 'brique' && !(c.element.typec === 'caisse' && (cb.element.typec === 'brique' || cb.element.typec === 'caisse'))) {
             sokoban.ajouterCase(sokoban.persoco[0], sokoban.persoco[1], x, y);
             sokoban.persoco = [x, y];
         }
