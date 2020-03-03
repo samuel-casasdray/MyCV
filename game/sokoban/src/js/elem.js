@@ -12,9 +12,9 @@ class Elem {
     }
 
     affichage() {
+        document.getElementById('compteur').innerText += this.src + '\n';
         if(this.src === null)
             return '<div class="img_vide"></div>';
-        document.getElementById('compteur').innerText = '<img src="' + this.src + '" alt="img">';
         return '<img src="' + this.src + '" alt="img">';
     }
 
