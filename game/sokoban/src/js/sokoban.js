@@ -35,7 +35,10 @@ class Sokoban {
         document.getElementById("recommencer").onclick = () => this.loadall(niveau);
         document.getElementById("niveau_suivant").onclick = () => this.niveau_suivant();
         document.getElementById('fileload').addEventListener('change', this.changefile, false);
-        document.getElementById()
+        document.getElementById('f_up').onclick = () => this.deplacement({key: 'ArrowUp'});
+        document.getElementById('f_left').onclick = () => this.deplacement({key: 'ArrowLeft'});
+        document.getElementById('f_right').onclick = () => this.deplacement({key: 'ArrowRight'});
+        document.getElementById('f_down').onclick = () => this.deplacement({key: 'ArrowDown'});
     }
 
     changefile(evt) {

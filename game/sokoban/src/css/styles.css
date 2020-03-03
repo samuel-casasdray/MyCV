@@ -5,7 +5,7 @@ body > div {
     width: max-content;
 }
 
-body > div:not(#grille) > * {
+body > div:not(.spe) > * {
     margin: 0 10px;
 }
 
@@ -46,4 +46,19 @@ body > div:not(#grille) > * {
 .row {
     display: flex;
     flex-direction: row;
+}
+
+.col.spe {
+    width: 150px;
+    margin: auto;
+}
+
+.row.spe {
+    justify-content: space-around;
+}
+
+.row.spe input {
+    font-size: 2em;
+    background: none;
+    border: none;
 }
