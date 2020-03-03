@@ -59,7 +59,7 @@ class Sokoban {
     }
 
     affichage() {
-        let text = '<img src="images/fond.png">';
+        let text = '<img src="images/fond.png">fond';
         text += '<div class="cont">';
         for (let i = 0; i < this.cases.length; i++) {
             text += '<div class="row">';
