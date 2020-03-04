@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/SiteCV.iml" filepath="$PROJECT_DIR$/.idea/SiteCV.iml" />
+      <module fileurl="file://C:/wamp64/www/TD5/.idea/TD5.iml" filepath="C:/wamp64/www/TD5/.idea/TD5.iml" />
     </modules>
   </component>
 </project>
