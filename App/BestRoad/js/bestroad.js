@@ -3,25 +3,15 @@ class Bestroad {
     constructor() {
         this.key = "AIzaSyBXa6aVzpxGVnFQ5ziMkrUBWjDzrKMXrko";
         this.list_address = [];
+        this.list_time = [];
+        this.depart = 0;
+        this.arrive = 0;
         this.scenario();
     }
 
     scenario() {
-        document.getElementById('addAddressButton').onclick = () => {
-            let li = document.createElement("li");
-            let address = document.getElementById('addAddress').value;
-            li.innerText = address;
-            let input = document.createElement("input");
-            input.type = "button";
-            input.value = 'X';
-            input.onclick = () => {
-                this.list_address.splice(this.list_address.indexOf(address), 1);
-                document.getElementById('listAddress').removeChild(li);
-            };
-            li.appendChild(input);
-            this.list_address.push(address);
-            document.getElementById('listAddress').appendChild(li);
-            document.getElementById('addAddress').value = '';
+        window.onerror = (msg, url, numligne) => {
+            document.getElementById('error').innerText = msg + ' -> ' + url + ' -> ' + numligne;
         };
         document.getElementById('addAddressButtonFromMap').onclick = () => {
             let li = document.createElement("li");
@@ -36,8 +26,26 @@ class Bestroad {
             li.appendChild(input);
             this.list_address.push(marker.getTitle());
             document.getElementById('listAddress').appendChild(li);
+
+            let option = document.createElement("option");
+            option.value = (this.list_address.length - 1) + "";
+            option.appendChild(document.createTextNode(marker.getTitle()));
+            document.getElementById('depart').appendChild(option);
+            let option2 = document.createElement("option");
+            option2.value = (this.list_address.length - 1) + "";
+            option2.appendChild(document.createTextNode(marker.getTitle()));
+            document.getElementById('arrive').appendChild(option2);
         };
-        document.getElementById('calculate').onclick = () => this.calculate();
+        document.getElementById('calculate').onclick = () => {
+            document.getElementById('chargement').innerText = 'CHARGEMENT....';
+            this.calculate();
+        };
+        document.getElementById('depart').onchange = () => {
+            this.depart = document.getElementById('depart').value;
+        };
+        document.getElementById('arrive').onchange = () => {
+            this.arrive = document.getElementById('arrive').value;
+        }
     }
 
     /*async toCoord(loc) {
@@ -70,6 +78,18 @@ class Bestroad {
         });
     }
 
+    async getAllDistance(locs) {
+        return new Promise(async callback => {
+            for (let i = 0; i < locs.length; i++) {
+                for (let j = i+1; j < locs.length; j++) {
+                    let data = await this.distanceMatrix(locs[i], locs[j]);
+                    this.list_time.push([[locs[i], locs[j]], this.duration(data), this.distance(data)]);
+                }
+            }
+            callback();
+        });
+    }
+
     duration(data) {
         return data['rows'][0]['elements'][0]['duration']['value'];
     }
@@ -87,12 +107,18 @@ class Bestroad {
     }
 
     AllCombinations(locs) {
-        let loc = locs[0];
-        locs = locs.splice(1);
+        let loc_depart = locs[this.depart];
+        let loc_arrive = locs[this.arrive];
+        console.log(locs);
+        locs.splice(this.depart, 1);
+        if(this.depart !== this.arrive)
+            locs.splice(this.arrive - 1, 1);
+        console.log(locs);
         let list = this.AllCombinationsAux(locs);
         let result = [];
         for(let l of list)
-            result.push([loc].concat(this.remove(undefined, l)));
+            result.push([loc_depart].concat(this.remove(undefined, l)).concat([loc_arrive]));
+        console.log(result);
         return result;
     }
 
@@ -112,6 +138,15 @@ class Bestroad {
         return ac;
     }
 
+    getindex(loc1, loc2) {
+        let i = 0;
+        for(let element of this.list_time) {
+            if((element[0][0] === loc1 && element[0][1] === loc2) || (element[0][0] === loc2 && element[0][1] === loc1))
+                return i;
+            i++;
+        }
+    }
+
     async getMeilleur(locs) {
         let combis = this.AllCombinations(locs);
         let c;
@@ -121,9 +156,9 @@ class Bestroad {
             let time = 0;
             let m = 0;
             for (let i = 0; i < combi.length - 1; i++) {
-                let data = await this.distanceMatrix(combi[i], combi[i+1]);
-                time += this.duration(data);
-                m += this.distance(data);
+                let data = this.list_time[this.getindex(combi[i], combi[i+1])];
+                time += data[1];
+                m += data[2];
             }
             if(time < min) {
                 min = time;
@@ -136,6 +171,7 @@ class Bestroad {
 
     async calculate() {
         let a = Array.from(this.list_address);
+        await this.getAllDistance(a);
         let meilleur = await this.getMeilleur(this.list_address);
         this.list_address = a;
         this.affichage(meilleur);
@@ -176,6 +212,7 @@ class Bestroad {
         a.text = "Voir sur Google Maps";
         a.target = '_blank';
         resultat.appendChild(a);
+        document.getElementById('chargement').innerHTML = '';
     }
 
 }
