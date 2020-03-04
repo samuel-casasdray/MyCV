@@ -14,24 +14,33 @@ class Bestroad {
             let input = document.createElement("input");
             input.type = "button";
             input.value = 'X';
+            input.onclick = () => {
+                this.list_address.splice(this.list_address.indexOf(address), 1);
+                document.getElementById('listAddress').removeChild(li);
+            };
             li.appendChild(input);
             this.list_address.push(address);
             document.getElementById('listAddress').appendChild(li);
+            document.getElementById('addAddress').value = '';
         };
         document.getElementById('addAddressButtonFromMap').onclick = () => {
             let li = document.createElement("li");
+            li.innerText = marker.getTitle();
             let input = document.createElement("input");
             input.type = "button";
             input.value = 'X';
+            input.onclick = () => {
+                this.list_address.splice(this.list_address.indexOf(marker.getTitle()), 1);
+                document.getElementById('listAddress').removeChild(li);
+            };
             li.appendChild(input);
-            li.innerText = marker.getTitle();
             this.list_address.push(marker.getTitle());
             document.getElementById('listAddress').appendChild(li);
-        }
+        };
         document.getElementById('calculate').onclick = () => this.calculate();
     }
 
-    async toCoord(loc) {
+    /*async toCoord(loc) {
         let url = "https://maps.googleapis.com/maps/api/geocode/json?address="+loc.replace(' ', '+')+"&key="+this.key;
         return new Promise(callback => {
             $.getJSON(url, {}).done(data => {
@@ -39,7 +48,7 @@ class Bestroad {
                 callback(loc['lat'] + ',' + loc['lng']);
             });
         });
-    }
+    }*/
 
     async toAddress(loc) {
         let url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+loc+"&key="+this.key;
@@ -52,11 +61,12 @@ class Bestroad {
     }
 
     async distanceMatrix(loc1, loc2) {
-        let url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins="+loc1+"&destinations="+loc2+"&key="+this.key;
         return new Promise(callback => {
-            $.getJSON(url, {}).done(data => {
-                callback(data);
-            });
+            service_distance.getDistanceMatrix({
+                origins: [loc1],
+                destinations: [loc2],
+                travelMode: 'DRIVING',
+            }, callback);
         });
     }
 
@@ -125,15 +135,10 @@ class Bestroad {
     }
 
     async calculate() {
-        let locs = [];
-        for(let address of this.list_address)
-            locs.push(await this.toCoord(address));
-        let meilleur = await this.getMeilleur(locs);
-        for (let i = 0; i < meilleur[0].length; i++) {
-            let add = await this.toAddress(meilleur[0][i]);
-            meilleur[0][i] = [meilleur[0][i], add];
-        }
-        console.log(meilleur[0], this.convertSecond(meilleur[1]), meilleur[2]);
+        let a = Array.from(this.list_address);
+        let meilleur = await this.getMeilleur(this.list_address);
+        this.list_address = a;
+        this.affichage(meilleur);
     }
 
     convertSecond(sec) {
@@ -145,6 +150,32 @@ class Bestroad {
         sec /= 60;
         let heure = sec;
         return heure + "h, " + minute + "min, " + second + "sec";
+    }
+
+    affichage(meilleur) {
+        let resultat = document.getElementById('resultat');
+        resultat.innerHTML = "";
+        let ol = document.createElement("ol");
+        let text = "";
+        for(let str of meilleur[0]) {
+            let li = document.createElement("li");
+            li.innerText = str;
+            ol.appendChild(li);
+            text += str + "/";
+        }
+        resultat.appendChild(ol);
+        let span = document.createElement("span");
+        span.innerText = this.convertSecond(meilleur[1]);
+        resultat.appendChild(span);
+        let span2 = document.createElement("span");
+        span2.innerText = "  -> " + (meilleur[2] / 1000).toString() + "km";
+        resultat.appendChild(span2);
+        resultat.appendChild(document.createElement("br"));
+        let a = document.createElement("a");
+        a.href = 'https://www.google.fr/maps/dir/'+text.replace(/\s/g, '+');
+        a.text = "Voir sur Google Maps";
+        a.target = '_blank';
+        resultat.appendChild(a);
     }
 
 }

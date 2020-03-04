@@ -14,7 +14,7 @@
         <div id="map"></div>
     </div>
     <div class="list col">
-        <div class="row">
+        <div class="row justify-content">
             <label for="addAddress">Ajouter une adresse manuellement (non recommendé) : </label>
             <input id="addAddress">
         </div>
@@ -24,6 +24,7 @@
         <ul id="listAddress">
         </ul>
         <button id="calculate">Calculer</button>
+        <div id="resultat"></div>
     </div>
 </div>
 
@@ -37,12 +38,15 @@
     var map;
     var marker;
     var infowindow;
+    var service_distance, service_geocode;
     function initMap() {
         var mapOptions = {
             zoom: 12,
             center: {lat: 43.610769, lng: 3.876716}
         };
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        service_distance = new google.maps.DistanceMatrixService();
+        service_geocode = new google.maps.Geocoder();
 
         marker = new google.maps.Marker({
             // The below line is equivalent to writing:
@@ -65,7 +69,7 @@
             let titre = await bestroad.toAddress(loc);
             marker.setTitle(titre);
             infowindow = new google.maps.InfoWindow({
-                content: '<p>' + marker.getTitle() + "</p><p>" + marker.getPosition() + "</p>"
+                content: '<p>' + marker.getTitle() + "</p>"
             });
             infowindow.open(map, marker);
         });
@@ -79,7 +83,7 @@
             let titre = await bestroad.toAddress(loc);
             marker.setTitle(titre);
             infowindow = new google.maps.InfoWindow({
-                content: '<p>' + marker.getTitle() + "</p><p>" + marker.getPosition() + "</p>"
+                content: '<p>' + marker.getTitle() + "</p>"
             });
             infowindow.open(map, marker);
         });
@@ -92,7 +96,7 @@
             marker.setPosition(latLng);
             map.panTo(latLng);
             infowindow = new google.maps.InfoWindow({
-                content: '<p>' + marker.getTitle() + "</p><p>" + marker.getPosition() + "</p>"
+                content: '<p>' + marker.getTitle() + "</p>"
             });
             infowindow.open(map, marker);
         };
@@ -136,12 +140,16 @@
     }
 </script>
 <script>
-    let xhr = new XMLHttpRequest();
-    const url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=43.6188606,3.8862339&destinations=43.6069358,3.888004099999999&key=AIzaSyBXa6aVzpxGVnFQ5ziMkrUBWjDzrKMXrko";
-    xhr.open("GET", url, true);
+    const url =
+        "https://maps.googleapis.com/maps/api/distancematrix/json?origins=43.6188606,3.8862339&destinations=43.6069358,3.888004099999999&key=AIzaSyBXa6aVzpxGVnFQ5ziMkrUBWjDzrKMXrko";
+    // let xhr = new XMLHttpRequest();
+    // xhr.open("GET", url, true);
+    // xhr.send(null);
+
     // xhr.withCredentials = true;
     // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     // xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
+
 </script>
 </body>
 </html>

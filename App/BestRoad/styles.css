@@ -14,7 +14,11 @@
 }
 
 .list {
-    margin: 5%;
+    margin: 2%;
+}
+
+.justify-content {
+    justify-content: space-between;
 }
 
 .list * {
