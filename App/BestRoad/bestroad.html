@@ -8,25 +8,26 @@
 </head>
 <body>
 
-<div>
-    <label for="listAddress">Liste des adresses : </label>
-    <ul id="listAddress">
-    </ul>
+<div class="cont row">
+    <div class="map">
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="map"></div>
+    </div>
+    <div class="list col">
+        <div class="row">
+            <label for="addAddress">Ajouter une adresse manuellement (non recommendé) : </label>
+            <input id="addAddress">
+        </div>
+        <button id="addAddressButton">Ajouter</button>
+        <button id="addAddressButtonFromMap">Ajouter depuis le plan</button>
+        <label for="listAddress">Liste des adresses : </label>
+        <ul id="listAddress">
+        </ul>
+        <button id="calculate">Calculer</button>
+    </div>
 </div>
 
-<div>
-    <label for="addAddress">Ajouter une nouvelle adresse : </label>
-    <input id="addAddress">
-    <button id="addAddressButton">Ajouter</button>
-    <button id="addAddressButtonFromMap">Ajouter depuis le plan</button>
-</div>
 
-<div>
-    <button id="calculate">Calculer</button>
-</div>
-
-<input id="pac-input" class="controls" type="text" placeholder="Search Box">
-<div id="map"></div>
 
 <script src="js/bestroad.js"></script>
 <script>let bestroad = new Bestroad()</script>
@@ -35,18 +36,18 @@
 <script>
     var map;
     var marker;
+    var infowindow;
     function initMap() {
         var mapOptions = {
-            zoom: 8,
-            center: {lat: -34.397, lng: 150.644}
+            zoom: 12,
+            center: {lat: 43.610769, lng: 3.876716}
         };
-        map = new google.maps.Map(document.getElementById('map'),
-            mapOptions);
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
         marker = new google.maps.Marker({
             // The below line is equivalent to writing:
             // position: new google.maps.LatLng(-34.397, 150.644)
-            position: {lat: -34.397, lng: 150.644},
+            position: {lat: 43.610769, lng: 3.876716},
             map: map,
             draggable: true
         });
@@ -55,20 +56,54 @@
         var searchBox = new google.maps.places.SearchBox(input);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-        map.addListener(marker, 'click', function() {
-            console.log('hi');
+        marker.addListener('click', async () => {
+            try {
+                infowindow.close();
+            } catch (e) {
+            }
+            let loc = marker.getPosition().toString().replace(/[\(\)]/g, '');
+            let titre = await bestroad.toAddress(loc);
+            marker.setTitle(titre);
+            infowindow = new google.maps.InfoWindow({
+                content: '<p>' + marker.getTitle() + "</p><p>" + marker.getPosition() + "</p>"
+            });
+            infowindow.open(map, marker);
+        });
+
+        marker.addListener('dragend', async () => {
+            try {
+                infowindow.close();
+            } catch (e) {
+            }
+            let loc = marker.getPosition().toString().replace(/[\(\)]/g, '');
+            let titre = await bestroad.toAddress(loc);
+            marker.setTitle(titre);
+            infowindow = new google.maps.InfoWindow({
+                content: '<p>' + marker.getTitle() + "</p><p>" + marker.getPosition() + "</p>"
+            });
             infowindow.open(map, marker);
         });
 
         const placeMarkerAndPanTo = function (latLng) {
+            try {
+                infowindow.close();
+            } catch (e) {
+            }
             marker.setPosition(latLng);
             map.panTo(latLng);
-            //new google.maps.InfoWindow({content: '<p>' + marker});
+            infowindow = new google.maps.InfoWindow({
+                content: '<p>' + marker.getTitle() + "</p><p>" + marker.getPosition() + "</p>"
+            });
+            infowindow.open(map, marker);
         };
 
-        map.addListener('click', function(e) {
+        map.addListener('click', async (e) => {
+            let loc = e.latLng.toString().replace(/[\(\)]/g, '');
+            let titre = await bestroad.toAddress(loc);
+            marker.setTitle(titre);
             placeMarkerAndPanTo(e.latLng, map);
         });
+
         searchBox.addListener('places_changed', function() {
             var places = searchBox.getPlaces();
 
@@ -78,13 +113,15 @@
 
             // For each place, get the icon, name and location.
             var bounds = new google.maps.LatLngBounds();
-            places.forEach(function(place) {
+            places.forEach(async (place) => {
                 if (!place.geometry) {
                     console.log("Returned place contains no geometry");
                     return;
                 }
 
-                marker.setTitle(place.name);
+                let loc = place.geometry.location.toString().replace(/[\(\)]/g, '');
+                let titre = await bestroad.toAddress(loc);
+                marker.setTitle(titre);
                 placeMarkerAndPanTo(place.geometry.location);
 
                 if (place.geometry.viewport) {
@@ -97,6 +134,14 @@
         });
 
     }
+</script>
+<script>
+    let xhr = new XMLHttpRequest();
+    const url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=43.6188606,3.8862339&destinations=43.6069358,3.888004099999999&key=AIzaSyBXa6aVzpxGVnFQ5ziMkrUBWjDzrKMXrko";
+    xhr.open("GET", url, true);
+    // xhr.withCredentials = true;
+    // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+    // xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
 </script>
 </body>
 </html>

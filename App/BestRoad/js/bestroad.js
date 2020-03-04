@@ -11,9 +11,24 @@ class Bestroad {
             let li = document.createElement("li");
             let address = document.getElementById('addAddress').value;
             li.innerText = address;
+            let input = document.createElement("input");
+            input.type = "button";
+            input.value = 'X';
+            li.appendChild(input);
             this.list_address.push(address);
             document.getElementById('listAddress').appendChild(li);
+        };
+        document.getElementById('addAddressButtonFromMap').onclick = () => {
+            let li = document.createElement("li");
+            let input = document.createElement("input");
+            input.type = "button";
+            input.value = 'X';
+            li.appendChild(input);
+            li.innerText = marker.getTitle();
+            this.list_address.push(marker.getTitle());
+            document.getElementById('listAddress').appendChild(li);
         }
+        document.getElementById('calculate').onclick = () => this.calculate();
     }
 
     async toCoord(loc) {
@@ -109,9 +124,9 @@ class Bestroad {
         return [c, min, metre];
     }
 
-    async calculate(list_address) {
+    async calculate() {
         let locs = [];
-        for(let address of list_address)
+        for(let address of this.list_address)
             locs.push(await this.toCoord(address));
         let meilleur = await this.getMeilleur(locs);
         for (let i = 0; i < meilleur[0].length; i++) {
