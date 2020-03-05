@@ -1,0 +1,149 @@
+body {
+	background-color:#E1E1E1;
+	font-family: ubuntu, arial, serif;
+	margin:0;
+	height: 100vh;
+	display: flex;
+}
+
+#plateau {
+	margin: auto;
+	padding:20px;
+	border:solid 1px grey;
+	border-radius: 8px;
+	box-shadow: 8px 8px 8px grey;
+	background-color: lightyellow;
+}
+
+input, select {
+	font-size: 18px;
+}
+
+input, select {
+	min-height:40px;
+}
+
+#modele {
+	display:none;
+	border:solid 1px lightgrey;
+}
+
+#jeu {
+	display:flex;
+	flex-direction: column;
+	border:solid 1px lightgrey;
+	min-height:403px;
+}
+
+.ligne {
+	display:flex;
+}
+
+.img_puzzle, #photo16 {
+	margin:0px 1px 1px 0px;
+	min-height: 100px;
+}
+
+#boutons {
+	display:flex;
+	justify-content: space-around;
+	align-items: stretch;
+	margin-bottom:10px;
+	height:3em;
+}
+
+#plateau {
+	display: flex;
+	flex-direction: column;
+	width:405px;
+}
+
+#themes, #melanger {
+	flex-grow: 1;
+}
+
+#solution {
+	width:30%;
+}
+
+#message_cont {
+	background-color:#F4F4F3;
+	padding: 0 10px;
+	margin-top: 10px;
+	border: solid 1px darkgray;
+	border-radius: 6px;
+	color:darkslategray;
+	height:3em;
+	display: flex;
+}
+
+#message {
+	margin: auto;
+}
+
+#titre>p, #footer>p {
+	text-align: center;
+	font-size: 1.5em;
+}
+
+#titre>p {
+	margin: 10px 3px 20px 3px;
+}
+
+#footer>p {
+	margin: 10px 3px 0px 3px;
+}
+
+/* huawei mate 20 */
+
+@media(max-width: 1080px) {
+	#plateau {
+		width:75%;
+	}
+	.ligne>img {
+		min-width:24.8%;
+	}
+	#photo16 {
+		min-width: 99.8%;
+	}
+	#boutons, #message_cont {
+		height:5em;
+	}
+	input, select, p {
+		font-size: 30px;
+	}
+	#titre>p, #footer>p {
+		font-size: 2.5em;
+		margin:30px 0px;
+	}
+
+}
+
+@media(max-width: 750px) {
+	#plateau {
+		width:75%;
+	}
+	.ligne>img {
+		min-width:24.8%;
+	}
+	#photo16 {
+		min-width: 99.8%;
+	}
+	#boutons, #message_cont {
+		height:5em;
+	}
+	input, select {
+		font-size: 20px;
+	}
+	input, select {
+		max-height:25px;
+	}
+	#titre>p, #footer>p {
+		font-size: 1.8em;
+		margin:5px 0px;
+	}
+	#boutons {
+		margin:10px 0px -10px 0px;
+	}
+
+}

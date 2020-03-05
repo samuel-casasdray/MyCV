@@ -3,7 +3,8 @@
     "1": "Profil",
     "2": "Compétences",
     "3": "Mes projets",
-    "4": "Historique"
+    "4": "Historique",
+    "5": "Tester"
   },
   "about": {
     "titre": "Étudiant a l'IUT de Montpellier en informatique",
@@ -82,5 +83,12 @@
   },
   "darkmode": "Mode sombre",
   "flag": ["fr", "en"],
-  "langtext": "Langage : "
+  "langtext": "Langage : ",
+  "try" : {
+    "app" : {
+      "taquin": "game/taquin",
+      "sokoban": "game/sokoban"
+    },
+    "text": "Cliquez sur un lien pour acceder acceder a la version en ligne de l'application"
+  }
 }

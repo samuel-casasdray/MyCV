@@ -3,7 +3,8 @@
     "1": "Profile",
     "2": "Skills",
     "3": "My project",
-    "4": "My history"
+    "4": "My history",
+    "5": "Try"
   },
   "about": {
     "titre": "Student at IUT-Montpellier in informatic division",
@@ -82,5 +83,12 @@
   },
   "darkmode": "Dark mode",
   "flag": ["fr", "en"],
-  "langtext": "Language : "
+  "langtext": "Language : ",
+  "try" : {
+    "app" : {
+      "taquin": "game/taquin",
+      "sokoban": "game/sokoban"
+    },
+    "text": "Cliquez sur un lien pour acceder acceder a la version en ligne de l'application"
+  }
 }

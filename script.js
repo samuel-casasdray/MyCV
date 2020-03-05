@@ -54,6 +54,15 @@ function applydico(json) {
                 value = value[i];
             if(element.dataset.dico.startsWith("tab-text"))
                 value = "<div>" + text.replace(/\n/g, "</div><div>") + "</div>";
+            if(element.dataset.dico.startsWith("try-app")) {
+                let tab = value;
+                value = "";
+                for(let e of Object.keys(tab)) {
+                    let balise = "<p><a href='"+tab[e]+"' target='_blank'>&nbsp;&nbsp;>>&nbsp;&nbsp;"+e+"</a></p>";
+                    value += balise;
+                }
+                console.log(value);
+            }
             element.innerHTML = value;
         });
         try {
@@ -61,17 +70,6 @@ function applydico(json) {
         } catch (e) {
             console.error(e);
         }
-        /*try {
-            for(let child1 of Object.entries(child_tab)) {
-                for(let child2 of Object.entries(child1[1].children)) {
-                    child2[1].children[0].textContent = Object.entries(json_global["annee"]["2018"])[child2[0]][0];
-                    child2[1].children[1].textContent = Object.entries(json_global["annee"]["2018"])[child2[0]][1];
-
-                }
-            }
-        } catch (e) {
-            console.error(e);
-        }*/
         callback("fini");
     });
 }

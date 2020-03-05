@@ -12,7 +12,6 @@ class Elem {
     }
 
     affichage() {
-        document.getElementById('compteur').innerText += this.src + '\n';
         if(this.src === null)
             return '<div class="img_vide"></div>';
         return '<img src="' + this.src + '" alt="img">';

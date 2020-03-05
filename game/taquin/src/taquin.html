@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>taquin JavaScript</title>
+	<link href="img/icone.png" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="css/styles_taquin.css">
+</head>
+<body>
+	<div id="plateau">
+		<div id="titre"><p>Taquin</p></div>
+		<div id="boutons">
+			<select id="themes">
+				<option selected value="nombres">Nombres</option>
+				<option value="oeildedieu">Oeil de Dieu</option>
+				<option value="turing">Alan Turing</option>
+				<option value="einstein">Albert Einstein</option>
+				<option value="fractale">Fractale</option>
+				<option value="mur">Mur de pierres</option>
+				<option value="buzz">Buzz Aldrin</option>
+				<option value="storm">Orage</option>
+				<option value="alpes">Alpes</option>
+				<option value="rose">Rose</option>
+				<option value="ciel">Ciel</option>
+			</select>
+			<input type="button" id="melanger" value="mélanger">
+			<input type="button" id="solution" value="solution">
+		</div>
+		<div id="jeu">
+			<div id="ligne0" class="ligne">
+				<img id="photo0" class="img_puzzle" src='img/nombres/nombres_0.jpg'>
+				<img id="photo1" class="img_puzzle" src='img/nombres/nombres_1.jpg'>
+				<img id="photo2" class="img_puzzle" src='img/nombres/nombres_2.jpg'>
+				<img id="photo3" class="img_puzzle" src='img/nombres/nombres_3.jpg'>
+			</div>
+			<div id="ligne1" class="ligne">
+				<img id="photo4" class="img_puzzle" src='img/nombres/nombres_4.jpg'>
+				<img id="photo5" class="img_puzzle" src='img/nombres/nombres_5.jpg'>
+				<img id="photo6" class="img_puzzle" src='img/nombres/nombres_6.jpg'>
+				<img id="photo7" class="img_puzzle" src='img/nombres/nombres_7.jpg'>
+			</div>
+			<div id="ligne2" class="ligne">
+				<img id="photo8" class="img_puzzle" src='img/nombres/nombres_8.jpg'>
+				<img id="photo9" class="img_puzzle" src='img/nombres/nombres_9.jpg'>
+				<img id="photo10" class="img_puzzle" src='img/nombres/nombres_10.jpg'>
+				<img id="photo11" class="img_puzzle" src='img/nombres/nombres_11.jpg'>
+			</div>
+			<div id="ligne3" class="ligne">
+				<img id="photo12" class="img_puzzle" src='img/nombres/nombres_12.jpg'>
+				<img id="photo13" class="img_puzzle" src='img/nombres/nombres_13.jpg'>
+				<img id="photo14" class="img_puzzle" src='img/nombres/nombres_14.jpg'>
+				<img id="photo15" class="img_puzzle" src='img/nombres/nombres_15.jpg'>
+			</div>
+		</div>
+		<div id="modele">
+			<img id="photo16" src='img/nombres/nombres_16.jpg'>
+		</div>
+		<div id="message_cont">
+			<div id="message"></div>
+		</div>
+		<script src="js/case.js"></script>
+		<script src="js/image.js"></script>
+		<script src="js/taquin.js"></script>
+		<script>
+			let taquin = new Taquin()
+		</script>
+	</div>
+</body>
+</html>
