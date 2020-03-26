@@ -6,8 +6,9 @@ class Taquin {
         this.theme = 'nombres';
         for (let i = 0; i < 4; i++) {
             for (let j = 0; j < 4; j++)
-                this.cases.push(new Case(i, j, this.theme, i * 4 + j, this.laCaseVide));
+                this.cases.push(new Case(i, j, this.theme, i * 4 + j));
         }
+        this.cases.push(new Case(100, 100, this.theme, 16));
         for(let c of this.cases)
             c.actualiserAffichage();
         for(let c of this.cases)
@@ -50,10 +51,9 @@ class Taquin {
 
     countBienPlace() {
         let nb = 0;
-        for (let i = 0; i < 16; i++) {
+        for (let i = 0; i < 16; i++)
             if(this.cases[i].image.nb === i)
                nb++;
-        }
         return nb;
     }
 
@@ -68,14 +68,8 @@ class Taquin {
 
     changerTheme(theme) {
         this.theme = theme;
-        if(document.getElementById('solution').value === 'solution') {
-            for(let c of this.cases)
-                c.changerTheme(theme);
-        }
-        else {
-            for (let c of this.cases)
-                c.changerTheme(theme);
-        }
+        for (let c of this.cases)
+            c.changerTheme(theme);
     }
 
     victoire() {

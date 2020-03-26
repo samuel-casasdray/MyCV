@@ -16,133 +16,13 @@ body {
     height: 100vh !important;
     width: 100% !important;
     margin: 0;
-    background-color: #79E7FF;
-    /*overflow-x: hidden;
-    overflow-y: hidden;*/
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 a {
     color: #0A0908;
     text-decoration: none;
-}
-
-/* CONFIG */
-
-.config-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: #0A0908;
-    border-radius: 100%;
-    z-index: 1;
-    width: 50px;
-    height: 50px;
-}
-
-.config-button:hover {
-    background-color: #4d4a4a;
-}
-
-.config-menu {
-    display: none;
-    position: absolute;
-    height: 100vh;
-    width: 0;
-    right: 0;
-    background-color: whitesmoke;
-    z-index: 1;
-    transition: width 0.3s, background-color 0.5s;
-    box-shadow: -1px 0 5px 0 #0A0908;
-}
-
-.config-menu * {
-    font-family: Raleway, Roboto, sans-serif;
-}
-
-.config-menu.show {
-    display: block;
-}
-
-.dark-mode {
-    width: max-content;
-    margin: 40% auto 20%;
-}
-
-/* The switch - the box around the slider */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-    margin-left: 20px;
-}
-
-/* Hide default HTML checkbox */
-.switch .darkmode-button {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-/* The slider */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s, background-color 0.5s;
-    transition: .4s, background-color 0.5s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: -13px;
-    bottom: -3px;
-    background-color: #0A0908;
-    -webkit-transition: .4s, background-color 0.5s;
-    transition: .4s, background-color 0.5s;
-    border-radius: 50%;
-}
-
-.darkmode-button:checked + .slider {
-    background-color: #F39C12;
-}
-
-.darkmode-button:focus + .slider {
-    box-shadow: 0 0 1px #F39C12;
-}
-
-.darkmode-button:checked + .slider:before {
-    -webkit-transform: translateX(39px);
-    -ms-transform: translateX(39px);
-    transform: translateX(39px);
-}
-
-.lang {
-    display: flex;
-    flex-direction: column;
-    width: max-content;
-    margin: auto;
-}
-
-.lang .lang-text {
-    margin: auto auto 20px;
-}
-
-.flag-item {
-    width: 45px;
-    height: 30px;
-}
-
-.flag-item:not(:last-child) {
-    margin-right: 20px;
 }
 
 /* DARK MODE */
@@ -156,7 +36,7 @@ a {
 }
 
 .black-color-1 .active {
-    color: #F39C12 !important;
+    color: #79E7FF !important;
 }
 
 .black-color-2 {
@@ -164,7 +44,7 @@ a {
 }
 
 .black-color-3 div:hover {
-    color: #ff1a1a !important;
+    color: #79E7FF !important;
 }
 
 .black-bg-0 {
@@ -195,8 +75,21 @@ a {
     background-color: #484848 !important;
 }
 
+.black-bg-7 ul li:hover {
+    background-color: #606060 !important;
+}
+
 .black-border {
-    border: white solid 1px;
+    border: white solid 1px !important;
+}
+
+.black-spe {
+    border: white solid 1px !important;
+    color: white !important;
+}
+
+.black-spe:hover {
+    background-color: #3c3f3e !important;
 }
 
 /* MENU */
@@ -207,25 +100,63 @@ a {
 }
 
 .menu {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
     width: 20%;
+    background-color: #79E7FF;
+}
+
+.widget {
+    height: min-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.widget .hide {
+    display: none;
+}
+
+.widget > * {
+    cursor: pointer;
+}
+
+.flag-item {
+    width: 45px;
+    height: 30px;
+}
+
+.flag-item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.language {
+    margin: auto 0;
+}
+
+.navbar-cont {
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin: auto 0;
     height: min-content;
 }
 
-.menu img {
+.navbar-cont img {
     width: 150px;
     height: 150px;
     border-radius: 100%;
     margin: auto;
 }
 
-.menu .navbar {
+.navbar-cont .navbar {
     margin-top: 20px;
 }
 
-.menu nav {
+.navbar-cont nav {
     height: 70%;
     display: flex;
     flex-direction: column;
@@ -238,6 +169,7 @@ nav ul {
     font-family: 'Roboto Condensed', sans-serif;
     position: relative;
     margin: 20px auto;
+    cursor: pointer;
 }
 
 nav ul:before {
@@ -312,6 +244,22 @@ nav ul.active {
     flex-direction: row;
 }
 
+#mc1 .part3 {
+    border-top: 1px darkgray solid;
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+#mc1 .part3 p a{
+    padding: 5px;
+    border: 1px solid black;
+}
+
+#mc1 .part3 p a:hover{
+    background-color: #d5ddd9;
+}
+
 #mc1 .name {
     font-size: 24px;
     padding-bottom: 20px;
@@ -329,11 +277,13 @@ nav ul.active {
 }
 
 #mc1 .about {
-    width: 55%;
+    width: 45%;
+    margin: 0 auto;
+    text-align: justify;
 }
 
 #mc1 .detail {
-    width: 35%;
+    width: 45%;
 }
 
 #mc1 .detail-item div:first-child {
@@ -344,6 +294,16 @@ nav ul.active {
 #mc1 .detail-item {
     display: flex;
     flex-direction: row;
+}
+
+#headerPopup{
+    width:75%;
+    margin:0 auto;
+}
+
+#headerPopup iframe{
+    width:100%;
+    margin:0 auto;
 }
 
 /* Page 2 */
@@ -409,6 +369,7 @@ nav ul.active {
 
 #mc3 .tab-item .tab-titre {
     padding: 5px;
+    cursor: pointer;
 }
 
 #mc3 .tab-item .tab-titre:hover {
@@ -427,6 +388,10 @@ nav ul.active {
     padding: 0 18px;
 }
 
+#mc3 .tab-item .text-cont .hidden-image{
+    display: none;
+}
+
 #mc3 .tab-item .text {
     font-size: 16px;
     height: min-content;
@@ -436,6 +401,14 @@ nav ul.active {
 #mc3 .tab-item .text {
     padding: 3px 0;
     text-align: justify;
+}
+
+#mc3 .text-cont .text.last {
+    padding-bottom: 10px;
+}
+
+#mc3 .text-cont .text:first-child {
+    padding-top: 10px;
 }
 
 #mc3 .tab-item .image {
@@ -493,10 +466,11 @@ nav ul.active {
     font-size: 22px;
     padding-bottom: 5px;
     transition: color 0.3s, background-color 0.5s;
+    cursor: pointer;
 }
 
 #mc4 .text-cont-4 .annee .select {
-    color: #e3ae24;
+    color: #00A2E8;
     font-size: 28px;
 }
 
@@ -516,7 +490,7 @@ nav ul.active {
 }*/
 
 #mc4 .text-cont-4 .annee *:hover {
-    color: #b70000;
+    color: #79E7FF;
     text-decoration: underline;
 }
 
@@ -539,6 +513,12 @@ nav ul.active {
 
 #mc4 .annee-item .annee-item-text {
     text-align: justify;
+}
+
+/* Page 5 */
+
+.try-app p {
+    cursor: pointer;
 }
 
 /* ICON */

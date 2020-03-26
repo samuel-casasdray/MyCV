@@ -7,29 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, height=device-height">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="magnific-popup.css">
     <link rel="icon" type="image/jpg" href="ressources/profil.jpg" />
 </head>
 <body id="body">
-    <div class="config-button" id="config-button">
-        <i class="fa fa-cog" aria-hidden="true"></i>
-    </div>
-    <div class="config-menu" id="config-menu">
-        <div class="dark-mode">
-            <label for="darkmode-button" data-dico="darkmode" class="dicojs"></label>
-            <label class="switch">
-                <input class="darkmode-button" id="darkmode-button" type="checkbox">
-                <span class="slider round" id="slider"></span>
-            </label>
-        </div>
-        <div class="lang">
-            <div class="lang-text dicojs" data-dico="langtext"></div>
-            <div class="lang-flag" id="lang"></div>
-        </div>
-    </div>
     <div class="navburger" id="navburger"><i class="fa fa-bars" id="navburger-fa"></i></div>
     <div class="menu" id="menu">
-        <img src="ressources/profil.jpg" alt="profil" id="profil">
-        <nav id="navbar" class="navbar"></nav>
+        <div class="widget">
+            <div class="nightmode" id="nightmode">
+                <div class="day" id="day"><i class="fa fa-sun-o"></i></div>
+                <div class="night hide" id="night"><i class="fa fa-moon-o"></i></div>
+            </div>
+            <div class="language" id="language"></div>
+        </div>
+        <div class="navbar-cont">
+            <img src="ressources/profil.jpg" alt="profil" id="profil">
+            <nav id="navbar" class="navbar"></nav>
+        </div>
     </div>
     <div class="maincontent" id="maincontent">
         <div class="background" id="background"></div>
@@ -37,7 +31,7 @@
             <div class="container">
                 <div class="part1">
                     <div class="titre dicojs" data-dico="nav-1"></div>
-                    <div class="name">Samuel CASAS-DRAY</div>
+                    <div class="name"><span class="dicojs" data-dico="about-name"></span>Samuel CASAS-DRAY</div>
                     <div class="poste dicojs" data-dico="about-titre"></div>
                 </div>
                 <div class="part2">
@@ -49,12 +43,31 @@
                         <div class="dicojs" data-dico="detail-titre"></div>
                         <div class="detail-item">
                             <div class="dicojs" data-dico="detail-d1-titre"></div>
+                            <div class="configjs" data-config="birth"></div>
                             <div class="dicojs" data-dico="detail-d1-value"></div>
                         </div>
                         <div class="detail-item">
                             <div class="dicojs" data-dico="detail-d2-titre"></div>
                             <div class="dicojs" data-dico="detail-d2-value"></div>
                         </div>
+                        <div class="detail-item">
+                            <div class="dicojs" data-dico="detail-d3-titre"></div>
+                            <div class="dicojs" data-dico="detail-d3-value"></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="dicojs" data-dico="detail-d4-titre"></div>
+                            <div class="dicojs" data-dico="detail-d4-value"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="part3">
+                    <p class="text-center mt-5">
+                        <a href="#headerPopup" id="headerVideoLink" target="_blank" class="btn btn-outline-danger popup-modal">CV video</a>
+                    </p>
+                    <div id="headerPopup" class="mfp-hide embed-responsive embed-responsive-21by9">
+                        <iframe class="embed-responsive-item" width="854" height="480"
+                                src="https://www.youtube.com/embed/llNtTg6dd-4" frameborder="0"
+                                allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -62,7 +75,7 @@
         <div id="mc2" class="cache">
             <div class="container">
                 <div class="titre dicojs" data-dico="nav-2"></div>
-                <div class="list">
+                <div class="list" id="list_competence">
                     <ul>
                         <li class="star" data-star="4">
                             <span>Javascript</span>
@@ -115,64 +128,7 @@
         <div id="mc3" class="cache">
             <div class="container">
                 <div class="titre dicojs" data-dico="nav-3"></div>
-                <div class="tab">
-                    <div class="tab-item">
-                        <div class="tab-titre dicojs" data-dico="tab-e1-titre"></div>
-                        <div class="text-cont">
-                            <div class="text dicojs" data-dico="tab-e1-text-1"></div>
-                            <div class="image i-2spe">
-                                <img src="ressources/pacman.PNG" alt="pac-man">
-                                <img src="ressources/tetris.PNG" alt="tetris">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-item">
-                        <div class="tab-titre dicojs" data-dico="tab-e2-titre"></div>
-                        <div class="text-cont">
-                            <div class="text dicojs" data-dico="tab-e2-text-1"></div>
-                            <div class="image i-3">
-                                <img src="ressources/RPG2.PNG" alt="rpg1">
-                                <img src="ressources/RPG3.PNG" alt="rpg2">
-                                <img src="ressources/RPG1.PNG" alt="rpg3">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-item">
-                        <div class="tab-titre dicojs" data-dico="tab-e3-titre"></div>
-                        <div class="text-cont">
-                            <div class="text dicojs" data-dico="tab-e3-text-1"></div>
-                            <div class="image">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-item">
-                        <div class="tab-titre dicojs" data-dico="tab-e4-titre"></div>
-                        <div class="text-cont">
-                            <div class="text dicojs" data-dico="tab-e4-text-1"></div>
-                            <div class="image i-1">
-                                <img src="ressources/Awale.PNG" alt="Awale">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-item">
-                        <div class="tab-titre dicojs" data-dico="tab-e5-titre"></div>
-                        <div class="text-cont">
-                            <div class="text dicojs" data-dico="tab-e5-text-1"></div>
-                            <div class="image i-3">
-                                <img src="ressources/e-commerce1.png" alt="e-commerce1">
-                                <img src="ressources/e-commerce2.png" alt="e-commerce2">
-                                <img src="ressources/e-commerce3.png" alt="e-commerce3">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-item">
-                        <div class="tab-titre dicojs" data-dico="tab-e6-titre"></div>
-                        <div class="text-cont">
-                            <div class="text dicojs" data-dico="tab-e6-text-1"></div>
-                            <div class="image i-3">
-                            </div>
-                        </div>
-                    </div>
+                <div class="tab" id="tab">
                 </div>
             </div>
         </div>
@@ -188,9 +144,9 @@
         <div id="mc5" class="cache">
             <div class="container">
                 <div class="titre dicojs" data-dico="nav-5"></div>
-                <div class="text-cont">
+                <div>
                     <div class="dicojs" data-dico="try-text"></div>
-                    <div class="dicojs" data-dico="try-app"></div>
+                    <div class="try-app dicojs" data-dico="try-app"></div>
                 </div>
             </div>
         </div>
@@ -210,6 +166,7 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="magnificPopup.js"></script>
     <script>
         firstload();
         //alert(window.innerWidth + "-" + window.innerHeight);
