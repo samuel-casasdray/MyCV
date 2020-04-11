@@ -23,8 +23,11 @@ function navchange(ancien, nouveau) {
 }
 
 function changerpage(id) {
+    document.getElementById('background').style.height = '0';
     cacher(document.getElementsByClassName("visible")[0]);
     afficher(document.getElementById(id));
+    let height = document.getElementById(id).scrollHeight;
+    document.getElementById('background').style.height = height + 'px';
     navchange(document.getElementsByClassName("active")[0], document.getElementById("nav-"+id))
 }
 
@@ -207,6 +210,15 @@ async function firstload() {
     });
     showflag(lang);
     await applyconfig(json_config);
+    document.onscroll = (e) => {
+        let height = document.getElementById('background').scrollHeight;
+        if(window.scrollY + window.innerHeight > height)
+            window.scrollTo(0, height - window.innerHeight);
+    };
+    setTimeout(() => {
+        let height = document.getElementById("mc1").scrollHeight;
+        document.getElementById('background').style.height = height + 'px';
+    }, 200);
 }
 
 function loadannee(json) {
