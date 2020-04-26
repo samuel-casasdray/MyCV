@@ -13,10 +13,6 @@ class Player extends Entity {
         window.onkeyup = (ev) => this.toggleKey("up", ev);
     }
 
-    setPlateforme(plateforme) {
-        this.plateforme = plateforme;
-    }
-
     toggleKey(type, ev) {
         let key = ev.key;
         switch (key) {

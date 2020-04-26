@@ -5,6 +5,7 @@ class Game {
 
     constructor() {
         this.start();
+        this.onGame = true;
     }
 
     async start() {
@@ -17,17 +18,24 @@ class Game {
         this.active = true;
         Game.game.appendChild(this.player.show());
         this.gameloop();
+        window.addEventListener("mousedown", (ev) => this.toggleGameLoop(ev))
+    }
+
+    toggleGameLoop(ev) {
+        if(ev.button === 1)
+            this.onGame = !this.onGame;
     }
 
     gameloop() {
+        if(!this.onGame) {
+            setTimeout(() => window.requestAnimationFrame(() => this.gameloop()), 10);
+            return;
+        }
         this.player.move();
-        this.update();
-        this.map.updateCamera();
-        setTimeout(() => window.requestAnimationFrame(() => this.gameloop()), 10);
-    }
-
-    update() {
         this.player.update();
+        this.map.updateCamera();
+        this.map.updateMonstre();
+        setTimeout(() => window.requestAnimationFrame(() => this.gameloop()), 10);
     }
 
 }

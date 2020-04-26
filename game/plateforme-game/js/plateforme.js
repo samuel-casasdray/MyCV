@@ -17,10 +17,6 @@ class Plateforme {
                     row.push(new Bloc(this.mapBloc.get(this.level[i][j]), j, i));
                 else
                     row.push(new Bloc(this.mapBloc.get("0"), j, i));
-                if(this.typeMonstre.has(this.level[i][j])) {
-                    console.log(j, i);
-                    this.monstre.push(new Ennemi(j, i, this.typeMonstre.get(this.level[i][j])));
-                }
             }
             this.block.push(row);
         }
@@ -29,10 +25,7 @@ class Plateforme {
                 this.block[i][j].addToGame();
             }
         }
-        for(let m of this.monstre) {
-            m.update();
-            Game.game.appendChild(m.show());
-        }
+        this.createMonstre();
     }
 
     moveCamera(dir) {
@@ -47,6 +40,12 @@ class Plateforme {
 
     updateCamera() {
         Game.game.style.left = '-'+(this.camera * 32)+'px';
+    }
+
+    updateMonstre() {
+        for(let m of this.monstre) {
+            m.update();
+        }
     }
 
     initiateBlock() {
@@ -74,11 +73,19 @@ class Plateforme {
 
     isSolid(x, y) {
         return this.typeBloc.get("solid").includes(this.level[Math.ceil(y)][Math.floor(x)]) ||
-            this.typeBloc.get("solid").includes(this.level[Math.ceil(y)][Math.ceil(x)]);
+            this.typeBloc.get("solid").includes(this.level[Math.ceil(y)][Math.ceil(x)]) ||
+            x <= 0 || x >= 200;
     }
 
     createMonstre() {
-
+        for (let i = 0; i < this.level.length; i++)
+            for (let j = 0; j < this.level[i].length; j++)
+                if(this.typeMonstre.has(this.level[i][j]))
+                    this.monstre.push(new Ennemi(j, i, this.typeMonstre.get(this.level[i][j])));
+        for(let m of this.monstre) {
+            m.setPlateforme(this);
+            Game.game.appendChild(m.show());
+        }
     }
 
 }
