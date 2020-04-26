@@ -48,16 +48,6 @@ class Bestroad {
         }
     }
 
-    /*async toCoord(loc) {
-        let url = "https://maps.googleapis.com/maps/api/geocode/json?address="+loc.replace(' ', '+')+"&key="+this.key;
-        return new Promise(callback => {
-            $.getJSON(url, {}).done(data => {
-                let loc = data['results'][0]['geometry']['location'];
-                callback(loc['lat'] + ',' + loc['lng']);
-            });
-        });
-    }*/
-
     async toAddress(loc) {
         let url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+loc+"&key="+this.key;
         return new Promise(callback => {
@@ -172,8 +162,7 @@ class Bestroad {
     async calculate() {
         let a = Array.from(this.list_address);
         await this.getAllDistance(a);
-        let meilleur = await this.getMeilleur(this.list_address);
-        this.list_address = a;
+        let meilleur = await this.getMeilleur(a);
         this.affichage(meilleur);
     }
 

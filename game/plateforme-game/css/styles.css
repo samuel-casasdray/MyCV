@@ -1,0 +1,17 @@
+.container {
+    border: 1px solid black;
+    position: relative;
+    max-width: 480px;
+    height: 256px;
+    display: flex;
+    overflow: hidden;
+}
+
+.game {
+    position: relative;
+    float: left;
+}
+
+.game img {
+    position: absolute;
+}
